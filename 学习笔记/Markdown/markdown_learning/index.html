@@ -1,0 +1,421 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Markdown简单入门 | ꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</title><meta name="author" content="Samdn"><meta name="copyright" content="Samdn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Markdown简单入门  Samdn  泥嚎 \ (@ ^ 0 ^ @ ) &#x2F; ！这是一份 专业的 偏个人向学习的简单笔记，可能存在不少问题或缺漏，如果有错误的话也希望您能帮我指正orz本文使用的工具是Vscode，需要下载的插件有 Markdown All in one、Markdown Image、Markdown Preview Enhance，Typora之后如果学会了再做补充">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown简单入门">
+<meta property="og:url" content="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown/markdown_learning/index.html">
+<meta property="og:site_name" content="꒰ঌ(🎀ᗜ&#96; v ´ᗜ 🌸)໒꒱💈">
+<meta property="og:description" content="Markdown简单入门  Samdn  泥嚎 \ (@ ^ 0 ^ @ ) &#x2F; ！这是一份 专业的 偏个人向学习的简单笔记，可能存在不少问题或缺漏，如果有错误的话也希望您能帮我指正orz本文使用的工具是Vscode，需要下载的插件有 Markdown All in one、Markdown Image、Markdown Preview Enhance，Typora之后如果学会了再做补充">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg">
+<meta property="article:published_time" content="2025-03-13T06:55:56.766Z">
+<meta property="article:modified_time" content="2025-03-13T13:24:22.359Z">
+<meta property="article:author" content="Samdn">
+<meta property="article:tag" content="Markdown">
+<meta property="article:tag" content="个人笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Markdown简单入门",
+  "url": "http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown/markdown_learning/",
+  "image": "https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg",
+  "datePublished": "2025-03-13T06:55:56.766Z",
+  "dateModified": "2025-03-13T13:24:22.359Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Samdn",
+      "url": "http://megumi-sea.love/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown/markdown_learning/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Markdown简单入门',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309234932.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</span></a><a class="nav-page-title" href="/"><span class="site-name">Markdown简单入门</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Markdown简单入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-13T06:55:56.766Z" title="发表于 2025-03-13 14:55:56">2025-03-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-13T13:24:22.359Z" title="更新于 2025-03-13 21:24:22">2025-03-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown/">Markdown</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><center><font face='楷体' color = purple size="10">Markdown简单入门</font></center>
+
+<center><font face="黑体" color = pink size="4">Samdn</font></center>
+
+<p>泥嚎 \ (@ ^ 0 ^ @ ) &#x2F; ！这是一份 <del>专业的</del> 偏个人向学习的简单笔记，可能存在不少问题或缺漏，如果有错误的话也希望您能帮我指正orz<br>本文使用的工具是Vscode，需要下载的插件有 <strong>Markdown All in one</strong>、<strong>Markdown Image</strong>、<strong>Markdown Preview Enhance</strong>，Typora之后如果学会了再做补充（写法大概是一样的，也不用下载前面的插件，而且有更多简便的操作）。可以配合这个视频食用  <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1bK4y1i7BY/?spm_id_from=333.788.recommend_more_video.-1&vd_source=b849733390b724bbfc7d8db9ee18e7cc">【全网最详细Markdown入门使用教程】40分钟教会你用免费的vscode做出好看的笔记</a></p>
+<p>下面因为演示了标题怎么写所以目录顺序可能会有点怪，凑合看看（预防针</p>
+<p>那么就直接开始写了:</p>
+<hr>
+<p><strong>下面是一些简单的基本语法：</strong></p>
+<ol>
+<li><h3 id="关于标题"><a href="#关于标题" class="headerlink" title="关于标题"></a><strong>关于标题</strong></h3><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="……"><a href="#……" class="headerlink" title="……"></a>……</h3><p> 最多应该是三级标题</p>
+<p> 在Vscode中的写法是：</p>
+<blockquote>
+<p><code># 一级标题</code><br><code>## 二级标题</code><br><code>### …… （#后要加空格）</code></p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<ol start="2">
+<li><h3 id="怎么写列表"><a href="#怎么写列表" class="headerlink" title="怎么写列表"></a><strong>怎么写列表</strong></h3><ol>
+<li>无序列表</li>
+</ol>
+<ul>
+<li>列表1</li>
+</ul>
+<ul>
+<li>列表2</li>
+</ul>
+<ul>
+<li>列表3</li>
+</ul>
+<ol start="2">
+<li>有序列表</li>
+<li>嵌套</li>
+<li>工作清单<ul>
+<li><input checked="" disabled="" type="checkbox"> 事件a</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> 事件b<ul>
+<li><input disabled="" type="checkbox"> 事件c</li>
+</ul>
+</li>
+</ul>
+<p> 在Vscode中的写法：</p>
+<blockquote>
+<ol>
+<li>无序列表</li>
+</ol>
+<ul>
+<li>列表1</li>
+</ul>
+<ul>
+<li>列表2</li>
+</ul>
+<ul>
+<li>列表3 (“ <strong>+</strong> “ “ <strong>-</strong> “ “ <strong><code>*</code></strong> “ 都可以，注意要使用空格将内容隔开)</li>
+</ul>
+<ol start="2">
+<li><p>有序列表</p>
+</li>
+<li><p>嵌套</p>
+</li>
+</ol>
+</blockquote>
+<ol start="4">
+<li><p>工作清单<br>  <code>- [x] 事件a</code> (如果希望他显示的是 <strong>“√”</strong> 的话就在[ ]中输入 <strong>“x”</strong> ，若为空则输入空格即可)</p>
+<p>  <code>- [ ] 事件b</code></p>
+<p>  <code>- [ ] 事件c</code> (对应的-和[ ]之间要用空格隔开)</p>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<ol start="3">
+<li><h3 id="怎么做表格"><a href="#怎么做表格" class="headerlink" title="怎么做表格"></a><strong>怎么做表格</strong></h3><p> 例如下面这个简单的表格</p>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="center">居中对齐</th>
+<th align="right">右对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">a</td>
+<td align="center">b</td>
+<td align="right">c</td>
+</tr>
+</tbody></table>
+<p> 可以看到第二栏下面对应的a、b、c分别呈现左对齐、居中、右对齐<br> abc<br> 在vscode中的写法：</p>
+<blockquote>
+<p>| 左对齐 | 居中对齐 | 右对齐 |<br> | :—- | :—-: | —-: |<br> | a | b | c |</p>
+</blockquote>
+<p> 如上，”:” 在左边时就是左对齐，两边都有就是居中，右对齐同理（中间的 “-“ 应该是有就可以，多少个无所谓）</p>
+</li>
+</ol>
+<hr>
+<ol start="4">
+<li><h3 id="怎么写引用"><a href="#怎么写引用" class="headerlink" title="怎么写引用"></a><strong>怎么写引用</strong></h3><p> 引用就是上面看到的方框，即</p>
+<blockquote>
+<p>这个东西</p>
+</blockquote>
+<p> 只需要一个 <strong>“&gt;”</strong> 后加上想要呈现的内容就可以。通过使用多个 “&gt;” 可以实现多个引用的嵌套</p>
+<blockquote>
+<p>只有一个 &gt; 的效果</p>
+<blockquote>
+<p>用了两个 &gt; 的效果</p>
+<blockquote>
+<p>以此类推</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<hr>
+<ol start="5">
+<li><h3 id="怎么写段落"><a href="#怎么写段落" class="headerlink" title="怎么写段落"></a><strong>怎么写段落</strong></h3><ul>
+<li><p>换行 —— 教程上是写需要两个空格后回车&#x2F;空一行，但我在写的时候直接回车似乎没出现这个问题（？）有需要的话再根据个人需求改改吧</p>
+</li>
+<li><p>分割线 —— 用三个 * 表示，或者换行后三个 - 也可</p>
+<hr>
+</li>
+<li><p>常见字体</p>
+<table>
+<thead>
+<tr>
+<th align="center">字体</th>
+<th align="center">代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><em>斜体</em></td>
+<td align="center">* *</td>
+</tr>
+<tr>
+<td align="center">&#x3D;&#x3D;高亮&#x3D;&#x3D;</td>
+<td align="center">&#x3D;&#x3D; &#x3D;&#x3D;</td>
+</tr>
+<tr>
+<td align="center"><strong>粗体</strong></td>
+<td align="center">** **</td>
+</tr>
+<tr>
+<td align="center"><em><strong>斜粗体</strong></em></td>
+<td align="center">*** ***</td>
+</tr>
+<tr>
+<td align="center"><del>删除线</del></td>
+<td align="center">~~ ~~</td>
+</tr>
+<tr>
+<td align="center"><u>下划线</u></td>
+<td align="center"><code>&lt;u&gt; &lt;/u&gt;</code></td>
+</tr>
+</tbody></table>
+<p>高亮在这边似乎看不出来，在Vscode是可以看得出来的</p>
+</li>
+<li><p>脚注<br>瓦尼瓦尼[^1] (不知道为什么写的时候能看到在博客看不出来TT)</p>
+<blockquote>
+<p>直接 <code>[^1]</code> 即可，注意在后面要加上其注释 <code>[^1]</code>: ꒰ঌ(🎀ᗜ v ᗜ 🌸)໒꒱💈</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="6">
+<li><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a><strong>代码</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int mian()&#123;</span><br><span class="line">  printf(&quot;seadra&quot;);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+可以直接用三个点把代码括起来。如果只有一行的话，可以直接用一个就行<br><code>print(&quot;I love seadra&quot;);</code></li>
+</ol>
+<hr>
+<ol start="7">
+<li><h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a><strong>超链接</strong></h3><ul>
+<li>第一种写法：<br>[bilibili]：<a target="_blank" rel="noopener" href="https://www.bilibili.com/">https://www.bilibili.com</a><br>直接输入网站一般能够自动识别，也可以用&lt;&gt;括起来</li>
+<li>第二种写法：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1VXW3e6Ejn/?spm_id_from=333.337.search-card.all.click">︎ı||ııı||ı|ıı||ı| 6” 展开</a><br>把作为链接的字用[]括起来，后面用()追加网址</li>
+<li>第三种写法：<br>推荐一部喜欢的<a target="_blank" rel="noopener" href="https://www.manhua55.com/manhua553929">漫画</a>QWQ<br>这种写法呈现结果与第二种相同，写法类似于注释，在最后面将要跳转的网址注释出来</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="8">
+<li><h3 id="图片的插入"><a href="#图片的插入" class="headerlink" title="图片的插入"></a><strong>图片的插入</strong></h3><ul>
+<li><p>这里放一个免费的<a target="_blank" rel="noopener" href="https://imgse.com/">图床</a><br>需要将要上传的图片传到图床上，上传之后能获得一个图片链接，将其复制下来放到markdown里即可</p>
+<p>*二编：感觉这个用着还是怪怪的，复制下来的链接预览中看不见图片，下面两张是我用腾讯云的图床贴的，可以找找有什么好用的免费图床，有的话顺便给我说一声 0 v 0<br> <img src="https://i.111666.best/image/gfZ7EJEJpL1GEAoywSuZfx.png" alt="image"></p>
+</li>
+<li><p>使用html语言来调整图片的大小</p>
+<div align=center><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/屏幕截图 2025-01-20 131242.png" width="40%" height="60%" border="0"/></div></li>
+</ul>
+</li>
+</ol>
+<h3 id="其他的操作："><a href="#其他的操作：" class="headerlink" title="其他的操作："></a>其他的操作：</h3><ul>
+<li><p><strong>插入latex公式</strong></p>
+<ul>
+<li>行内显示公式：$f(x)&#x3D;ax+b$<br> 在markdown里写成”<code>$f(x)=ax+b$</code>“，用两个$把公式隔开</li>
+<li>块内显示数学表达式：<br>$$<br> \begin{Bmatrix}<br> a &amp; b \<br> c &amp; d<br> \end{Bmatrix}<br>$$<br> 感觉这块要去单独去学习一下later的语法，我也不是很懂，块内显示就要用两个$把公式隔开</li>
+</ul>
+</li>
+<li><p><strong>pdf导出</strong><br>在预览部分右键选择Open in Browser在网页中打开，右键另存为pdf即可</p>
+<img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image.png"/>
+有其他的导出方法，但个人觉得这个比较好用</li>
+</ul>
+<hr>
+<p>大概先写这么多内容吧（应该日常写点东西够用了）！后面如果想起来要补什么再重新补充ᗜ w ᗜ</p>
+<p>​      </p>
+<p>[^1]: ꒰ঌ(🎀ᗜ&#96; v ´ᗜ 🌸)໒꒱💈</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://megumi-sea.love">Samdn</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown/markdown_learning/">http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown/markdown_learning/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://megumi-sea.love" target="_blank">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Markdown/">Markdown</a><a class="post-meta__tags" href="/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a></div><div class="post-share"><div class="social-share" data-image="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB/%E4%BA%8C%E7%BA%A7%E5%88%86%E7%B1%BB%E5%8F%AF%E5%8A%A0%E5%8F%AF%E4%B8%8D%E5%8A%A0/firstArticle/" title="测试用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">测试用</div></div><div class="info-2"><div class="info-item-1">This is my first article. </div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Samdn</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%A0%87%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">关于标题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%A6%E2%80%A6"><span class="toc-number">1.</span> <span class="toc-text">……</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%86%99%E5%88%97%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">怎么写列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%81%9A%E8%A1%A8%E6%A0%BC"><span class="toc-number">3.</span> <span class="toc-text">怎么做表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%86%99%E5%BC%95%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">怎么写引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%86%99%E6%AE%B5%E8%90%BD"><span class="toc-number">5.</span> <span class="toc-text">怎么写段落</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">6.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="toc-number">7.</span> <span class="toc-text">超链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E7%9A%84%E6%8F%92%E5%85%A5"><span class="toc-number">8.</span> <span class="toc-text">图片的插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%9A%84%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="toc-number">9.</span> <span class="toc-text">其他的操作：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown/markdown_learning/" title="Markdown简单入门">Markdown简单入门</a><time datetime="2025-03-13T06:55:56.766Z" title="发表于 2025-03-13 14:55:56">2025-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E4%B8%80%E7%BA%A7%E5%88%86%E7%B1%BB/%E4%BA%8C%E7%BA%A7%E5%88%86%E7%B1%BB%E5%8F%AF%E5%8A%A0%E5%8F%AF%E4%B8%8D%E5%8A%A0/firstArticle/" title="测试用">测试用</a><time datetime="2025-03-09T14:05:40.757Z" title="发表于 2025-03-09 22:05:40">2025-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/uncategorized/hello-world/" title="Hello World">Hello World</a><time datetime="2025-03-09T13:11:30.747Z" title="发表于 2025-03-09 21:11:30">2025-03-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309235030.png);"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Samdn</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: '0WhQ8k0Y4jiLLX5VxgVQj7p8-MdYXbMMI',
+      appKey: 'pZDjylYhUc1rb5B1DxF1yrhm',
+      avatar: 'monsterid',
+      serverURLs: 'https://samdn.megumi-sea.love',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
