@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>sql基本语法 | ꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</title><meta name="author" content="Samdn"><meta name="copyright" content="Samdn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="关键字不一定使用大写，一般是便于区分内容  数据库操作  创建数据库 1CREATE DATABASE &#96;demo&#96;;   反引号主要是用于防止创建的名称和关键字重复导致报错，如database 创建之后可以用show检查是否已经生成 1SHOW DATABASE;    删除数据库 1DROP DATABASE &#96;demo&#96;;    使用数据库 1USE &#96;demo&#96;;       表格操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql基本语法">
+<meta property="og:url" content="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/sql/index.html">
+<meta property="og:site_name" content="꒰ঌ(🎀ᗜ&#96; v ´ᗜ 🌸)໒꒱💈">
+<meta property="og:description" content="关键字不一定使用大写，一般是便于区分内容  数据库操作  创建数据库 1CREATE DATABASE &#96;demo&#96;;   反引号主要是用于防止创建的名称和关键字重复导致报错，如database 创建之后可以用show检查是否已经生成 1SHOW DATABASE;    删除数据库 1DROP DATABASE &#96;demo&#96;;    使用数据库 1USE &#96;demo&#96;;       表格操作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg">
+<meta property="article:published_time" content="2025-06-05T00:28:49.909Z">
+<meta property="article:modified_time" content="2025-06-09T15:18:05.418Z">
+<meta property="article:author" content="Samdn">
+<meta property="article:tag" content="个人笔记">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "sql基本语法",
+  "url": "http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/sql/",
+  "image": "https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg",
+  "datePublished": "2025-06-05T00:28:49.909Z",
+  "dateModified": "2025-06-09T15:18:05.418Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Samdn",
+      "url": "http://megumi-sea.love/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/sql/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'sql基本语法',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309234932.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</span></a><a class="nav-page-title" href="/"><span class="site-name">sql基本语法</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">sql基本语法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-06-05T00:28:49.909Z" title="发表于 2025-06-05 08:28:49">2025-06-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-06-09T15:18:05.418Z" title="更新于 2025-06-09 23:18:05">2025-06-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/">sql</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>关键字不一定使用大写，一般是便于区分内容</p>
+<ol>
+<li>数据库操作</li>
+</ol>
+<p>创建数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE `demo`;</span><br></pre></td></tr></table></figure>
+
+<p> 反引号主要是用于防止创建的名称和关键字重复导致报错，如<code>database</code></p>
+<p>创建之后可以<strong>用show检查</strong>是否已经生成</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> DATABASE;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>删除数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> DATABASE `demo`;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE `demo`;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ol start="2">
+<li>表格操作</li>
+</ol>
+<p>先了解一下有哪些数据类型</p>
+<table>
+<thead>
+<tr>
+<th>int</th>
+<th>decimal(m,n)</th>
+<th>varchar(n)</th>
+<th>blob</th>
+<th>date</th>
+<th>timestamp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整数</td>
+<td>小数 m代表总共几位数，n代表小数点部分占几位数</td>
+<td>字符串 n代表存放多少字节</td>
+<td>图片 影像 档案</td>
+<td>‘YYYY-MM-DD’ 日期</td>
+<td>‘YYYY-MM-DD HH:MM:SS’ 记录时间</td>
+</tr>
+</tbody></table>
+<p>创建表格</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> `student`(</span><br><span class="line">	`student_id` <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">	`name` <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">	`major` <span class="type">VARCHAR</span>(<span class="number">20</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>每行执行语句后加上逗号分隔开，在主键字段后加上<strong>PRIMARY KEY</strong>设置主键</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> `student`(</span><br><span class="line">	`student_id` <span class="type">INT</span>,</span><br><span class="line">	`name` <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">	`major` <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">    <span class="keyword">PRIMARY KEY</span>(`student_id`)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>或者在最后加上 PRIMARY KEY（主键名称）</p>
+<p>限制</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> `student`(</span><br><span class="line">	`student_id` <span class="type">INT</span> AUTO_INCREMENT,</span><br><span class="line">	`name` <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT NULL</span>,</span><br><span class="line">    `gender` <span class="type">VARCHAR</span>(<span class="number">5</span>) <span class="keyword">DEFAULT</span> `wuzhuang`,</span><br><span class="line">	`major` <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">UNIQUE</span>,</span><br><span class="line">    `score` <span class="type">INT</span>,</span><br><span class="line">    <span class="keyword">PRIMARY KEY</span>(`student_id`)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>AUTO_INCREMENT</strong>：会自动由1开始增加，减少手动输入带来的失误（一般用于设计主键），插入数据时也可以不用填入</p>
+<p><strong>NOT NULL</strong>：该属性的值不能为空</p>
+<p><strong>DEFAULT</strong>：设置预设值，若没有填写就会按预设值填入</p>
+<p><strong>UNIQUE</strong>：该属性的值是唯一的（不能出现与该值重复的）</p>
+</blockquote>
+<p>外键设置</p>
+<p>假设创建student表格之前已经创建了这样一个表格</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> `teacher`(</span><br><span class="line">	`teacher_id` <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">	`teacher_name` <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">	`class` <span class="type">VARCHAR</span>(<span class="number">20</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>现在创建student表格要再增加一项任课老师id并设置为外键</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> `student`(</span><br><span class="line">	`student_id` <span class="type">INT</span> AUTO_INCREMENT,</span><br><span class="line">	`name` <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT NULL</span>,</span><br><span class="line">    `gender` <span class="type">VARCHAR</span>(<span class="number">5</span>) <span class="keyword">DEFAULT</span> `wuzhuang`,</span><br><span class="line">	`major` <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">UNIQUE</span>,</span><br><span class="line">    `score` <span class="type">INT</span>,</span><br><span class="line">    `teacher_id` <span class="type">INT</span>,</span><br><span class="line">    <span class="keyword">FOREIGN KEY</span> (`teacher_id`) <span class="keyword">REFERENCES</span> `teacher`(`teacher_id`) <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">SET</span> <span class="keyword">NULL</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>或者在原有的student基础上直接添加外键</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER TABLE</span> `student`</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">FOREIGN KEY</span>(`teacher_id`)</span><br><span class="line"><span class="keyword">REFERENCES</span> `teacher`(`teacher_id`)</span><br><span class="line"><span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">SET</span> <span class="keyword">NULL</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ON DELETE <strong>SET NULL</strong>：当主键被删除时，表中对应外键值为NULL</p>
+<p>ON DELETE <strong>CASCADE</strong>：当主表中的记录被删除时，从表中所有引用该主键的记录也会被自动删除</p>
+</blockquote>
+<p>查看表格属性</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DESCRIBE</span> `student`;</span><br></pre></td></tr></table></figure>
+
+<p>注意表的查看跟数据库不太一样：表使用的是describe，数据库用的是show</p>
+<p>删除表格</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> `student`;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>新建属性</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER TABLE</span> `student` </span><br><span class="line"><span class="keyword">ADD</span> gpa <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>删除属性</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER TABLE</span> `student`</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">COLUMN</span> gpa;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li>数据的增删改查</li>
+</ol>
+<p>增加表中数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT INTO</span> `student` <span class="keyword">VALUE</span>(<span class="number">1</span>,`ano`,`吉他`);</span><br></pre></td></tr></table></figure>
+
+<p>括号中的顺序按照上面创建表的属性的顺序一致</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT INTO</span> `student`(`name`,`major`,`student_id`) <span class="keyword">VALUE</span>(<span class="string">&#x27;riki&#x27;</span>,<span class="string">&#x27;架子鼓&#x27;</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>或者在表名称后加上需要存储的属性，在VALUE后按相应顺序写入存储数据</p>
+<p>（非主键部分可以不录入，相当于null）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT INTO</span> `student`(`name`,`student_id`) <span class="keyword">VALUE</span>(<span class="string">&#x27;soyo&#x27;</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<p>tips：如果新增数据有是外键的属性，需要提前插入外键对应表格属性的元素，否则对应不上会出现报错</p>
+<p>检查表中录入数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `student`;</span><br></pre></td></tr></table></figure>
+
+<p><code>*</code>代表的是搜索全部</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> `name`,`major` <span class="keyword">FROM</span> `student`;</span><br></pre></td></tr></table></figure>
+
+<p>只展示表中name和major中的数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `student`</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> `score`;</span><br></pre></td></tr></table></figure>
+
+<p>将表中的顺序按照score升序排序，如果要降序排序的话需要在score后加上DESC（没有写时预设为ASC，由低到高排序）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `student`</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> `score`,`student_id`;</span><br></pre></td></tr></table></figure>
+
+<p>先按照score排序，如果分数相同的话再按id排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `student`</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> `score`</span><br><span class="line">LIMIT <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>限制只展示前两笔数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `student`</span><br><span class="line"><span class="keyword">WHERE</span> `major` <span class="operator">=</span> <span class="string">&#x27;架子鼓&#x27;</span> <span class="keyword">AND</span> `major` <span class="operator">=</span> <span class="string">&#x27;主唱&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>WHERE条件查询在查找中也可以使用，也可以跟上面的几种用法混用</p>
+<p>tips：不等于在sql中的符号为<code>&lt;&gt;</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `student`</span><br><span class="line"><span class="keyword">WHERE</span> `major` <span class="keyword">IN</span>(<span class="string">&#x27;架子鼓&#x27;</span>,<span class="string">&#x27;主唱&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>效果跟上面一样，只会显示major为架子鼓或主唱的学生信息，不用写太多个OR避免误差</p>
+<p>修改数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> `student`</span><br><span class="line"><span class="keyword">SET</span> `major` <span class="operator">=</span> `主唱`</span><br><span class="line"><span class="keyword">WHERE</span> `name` <span class="operator">=</span> `ano`;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>UPDATE后接要进行修改的表格，SET选择需要修改的属性信息，WHERE选择修改的条件（如修改哪位学生，修改哪个id的属性）</p>
+<p>如果没有增加修改的条件，会将表中的全部属性修改</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> `student`</span><br><span class="line"><span class="keyword">SET</span> `name` <span class="operator">=</span> <span class="string">&#x27;tomorin&#x27;</span>,`major` <span class="operator">=</span> <span class="string">&#x27;主唱&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> `name` <span class="operator">=</span> <span class="string">&#x27;ano&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>修改的属性不止一个时需要用逗号隔开</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> `student`</span><br><span class="line"><span class="keyword">SET</span> `major` <span class="operator">=</span> <span class="string">&#x27;主唱&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> `student_id` <span class="operator">=</span> <span class="number">1</span> <span class="keyword">OR</span> `student_id` <span class="operator">=</span> <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>条件有多个时可以用OR或AND连接</p>
+<p>删除数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> `student`</span><br><span class="line"><span class="keyword">WHERE</span> `student_id` <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>直接删除了id为1的整排数据。如果有多个条件也可以使用OR或AND连接</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://megumi-sea.love">Samdn</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/sql/">http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/sql/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://megumi-sea.love" target="_blank">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></div><div class="post-share"><div class="social-share" data-image="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6/lisan/" title="离散数学速成"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">离散数学速成</div></div><div class="info-2"><div class="info-item-1"> 命题逻辑的基本概念  命题 命题：能判断真值的陈述句 真值：真和假（可以用1和0表示） 真命题：真值为真的命题 假命题：真值为假的命题 原子命题：不能再被分解的每题 复合命题：由原子命题通过联结词联结而成的命题  如何判断： ①是否为陈述句 ②是否有唯一真值 命题联结词有五种联结词，分别为否定、合取、析取、蕴涵、等价。  否定：否定的真值与原真值结果相反（相当于数字逻辑中的 “非”） 合取：只有当两个真值都为真时，合取才为真（相当于数字逻辑中的 “与”） 析取：只要有一个真值为真，析取的值就为真（相当于数字逻辑中的 “或”） 蕴涵（需要单独记忆）：当p为真且q为假时，p→q为假(1→0 0)，其他情况都为真。p q的顺序不能颠倒   只要p，就q   因为p，所以q   p仅当q              只有q才p   除非q才p  ...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/design_of_java/" title="大鱼吃小鱼——java课程设计小游戏开发"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">大鱼吃小鱼——java课程设计小游戏开发</div></div><div class="info-2"><div class="info-item-1"> 游戏概述  本游戏是一个基于 Java 的二维游戏，玩家控制一条鱼在海洋环境中生存，通过吃掉敌方小鱼来获得分数并提升等级。游戏包含了多个关卡和敌人类型，具有简单的碰撞检测和游戏状态管理。 (因为手头上找不到合适的游戏素材，所以都是拿现有的东西拼凑的，内容可替换)  开发环境   开发工具：Vscode 编程语言：Java 主要库： javax.swing：用于创建图形用户界面 java.awt：用于绘图和图形处理 java.util：用于数据结构和集合     类基本功能实现  游戏窗口 类：GameWin.java 作用：设置游戏窗口的大小、标题、背景颜色，并初始化游戏状态。 关键方法： launch()：设置窗口属性，添加鼠标和键盘事件监听器，并启动游戏循环。 paint(Graphics...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/design_of_java/" title="大鱼吃小鱼——java课程设计小游戏开发"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-20</div><div class="info-item-2">大鱼吃小鱼——java课程设计小游戏开发</div></div><div class="info-2"><div class="info-item-1"> 游戏概述  本游戏是一个基于 Java 的二维游戏，玩家控制一条鱼在海洋环境中生存，通过吃掉敌方小鱼来获得分数并提升等级。游戏包含了多个关卡和敌人类型，具有简单的碰撞检测和游戏状态管理。 (因为手头上找不到合适的游戏素材，所以都是拿现有的东西拼凑的，内容可替换)  开发环境   开发工具：Vscode 编程语言：Java 主要库： javax.swing：用于创建图形用户界面 java.awt：用于绘图和图形处理 java.util：用于数据结构和集合     类基本功能实现  游戏窗口 类：GameWin.java 作用：设置游戏窗口的大小、标题、背景颜色，并初始化游戏状态。 关键方法： launch()：设置窗口属性，添加鼠标和键盘事件监听器，并启动游戏循环。 paint(Graphics...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/java_learnng/" title="Java基本语法入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-03</div><div class="info-item-2">Java基本语法入门</div></div><div class="info-2"><div class="info-item-1">​    这是一份个人向的笔记，供个人复习参考用，也适合有一定程序语言基础的初学者入门。希望看完能够对你会有所帮助^ ^（可以配合网课食用）  第一个程序：  123456789//class是一个类，helloworld是类名，类名尽量跟文件名保持一致public class helloworld&#123;	    //main:主方法（程序的入口）    public static void main(String[] args) &#123;        //输出双引号中的语句        System.out.println(&quot;Hello, World!&quot;);	    &#125;&#125;     tips：编写Java时应该注意以下内容  大小写敏感：如标识符Hello和hello是不一样的  类名：对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 MyFirstJavaClass  主方法入口：所有的 Java 程序由 public static void main(String[]...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c/lanqiao_learning/" title="蓝桥杯备赛用（2025）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-12</div><div class="info-item-2">蓝桥杯备赛用（2025）</div></div><div class="info-2"><div class="info-item-1">  输入带空格的字符串应该用fgets，scanf遇到空格时会停止读取，后续内容被截断 fgets用法如下：   1fgets(input, sizeof(input), stdin);   快速排序  ​	需要自己先定义一个函数compare（函数名可不为compare） 12345int compare(const void *a, const void *b) &#123;	int num1 = *(int*)a; 	int num2 = *(int*)b; 	return num2 - num1; // 返回正数时，num1 排在 num2 后面（实现降序）&#125;  ​	使用时如下： 1qsort( arr , n , sizeof ( int ) , compare );	//arr是数组名，n为数组的长度， compare为上面需要自己定义的函数  ​	二编：好麻烦不想用qsort了，otto教了一个c++的sort写法： 123456789101112131415161718192021222324252627#include...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6/lisan/" title="离散数学速成"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-30</div><div class="info-item-2">离散数学速成</div></div><div class="info-2"><div class="info-item-1"> 命题逻辑的基本概念  命题 命题：能判断真值的陈述句 真值：真和假（可以用1和0表示） 真命题：真值为真的命题 假命题：真值为假的命题 原子命题：不能再被分解的每题 复合命题：由原子命题通过联结词联结而成的命题  如何判断： ①是否为陈述句 ②是否有唯一真值 命题联结词有五种联结词，分别为否定、合取、析取、蕴涵、等价。  否定：否定的真值与原真值结果相反（相当于数字逻辑中的 “非”） 合取：只有当两个真值都为真时，合取才为真（相当于数字逻辑中的 “与”） 析取：只要有一个真值为真，析取的值就为真（相当于数字逻辑中的 “或”） 蕴涵（需要单独记忆）：当p为真且q为假时，p→q为假(1→0 0)，其他情况都为真。p q的顺序不能颠倒   只要p，就q   因为p，所以q   p仅当q              只有q才p   除非q才p  ...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown/markdown_learning/" title="Markdown简单入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-13</div><div class="info-item-2">Markdown简单入门</div></div><div class="info-2"><div class="info-item-1">Markdown简单入门    Samdn    泥嚎 \ (@ ^ 0 ^ @ ) &#x2F; ！这是一份 专业的 偏个人向学习的简单笔记，可能存在不少问题或缺漏，如果有错误的话也希望您能帮我指正orz   本文使用的工具是Vscode，需要下载的插件有 Markdown All in one、Markdown Image、Markdown Preview Enhance，Typora之后如果学会了再做补充（写法大概是一样的，也不用下载前面的插件，而且有更多简便的操作）。可以配合这个视频食用  【全网最详细Markdown入门使用教程】40分钟教会你用免费的vscode做出好看的笔记 下面因为演示了标题怎么写所以目录顺序可能会有点怪，凑合看看（预防针 那么就直接开始写了:  下面是一些简单的基本语法：  关于标题一级标题二级标题…… 最多应该是三级标题  在Vscode中的写法是：  # 一级标题## 二级标题### …… （#后要加空格）      怎么写列表 无序列表   列表1   列表2   列表3   有序列表 嵌套 工作清单  事件a  事件b  事件c    ...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Samdn</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个一晚上速成的小站，比较简陋大家凑合看看就行qaq</div></div><div class="card-widget user-map" id="user-map"><div class="item-headline"><i class="fas fa-heartbeat"></i><span>访客地图</span></div><div class="item-content"><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8"></script></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/design_of_java/" title="大鱼吃小鱼——java课程设计小游戏开发">大鱼吃小鱼——java课程设计小游戏开发</a><time datetime="2025-06-20T11:20:20.218Z" title="发表于 2025-06-20 19:20:20">2025-06-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/sql/" title="sql基本语法">sql基本语法</a><time datetime="2025-06-05T00:28:49.909Z" title="发表于 2025-06-05 08:28:49">2025-06-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6/lisan/" title="离散数学速成">离散数学速成</a><time datetime="2025-05-30T13:41:50.383Z" title="发表于 2025-05-30 21:41:50">2025-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java/java_learnng/" title="Java基本语法入门">Java基本语法入门</a><time datetime="2025-05-03T12:05:03.232Z" title="发表于 2025-05-03 20:05:03">2025-05-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c/lanqiao_learning/" title="蓝桥杯备赛用（2025）">蓝桥杯备赛用（2025）</a><time datetime="2025-04-12T05:37:01.127Z" title="发表于 2025-04-12 13:37:01">2025-04-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309235030.png);"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Samdn</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: '0WhQ8k0Y4jiLLX5VxgVQj7p8-MdYXbMMI',
+      appKey: 'pZDjylYhUc1rb5B1DxF1yrhm',
+      avatar: 'monsterid',
+      serverURLs: 'https://samdn.megumi-sea.love',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script defer src="/live2d-widget/dist/autoload.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
