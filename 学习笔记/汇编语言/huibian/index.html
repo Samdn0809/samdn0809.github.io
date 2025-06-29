@@ -1,0 +1,470 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>汇编语言指令 | ꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</title><meta name="author" content="Samdn"><meta name="copyright" content="Samdn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据传输类 mov指令  格式：mov dst,src mov指令是最常用的数据传送指令，传送对象可以是数据或地址  ①dst、src数据类型需要一致（同为16位或8位） ②dst、src不能同时进行存储器寻址 ③dst不能为数据段寄存器（DS） ④dst为段寄存器时（不为DS），src不能为立即数或段寄存器   xchg指令  格式：xchg opr1,opr2 功能：将操作数opr1和opr2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言指令">
+<meta property="og:url" content="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/huibian/index.html">
+<meta property="og:site_name" content="꒰ঌ(🎀ᗜ&#96; v ´ᗜ 🌸)໒꒱💈">
+<meta property="og:description" content="数据传输类 mov指令  格式：mov dst,src mov指令是最常用的数据传送指令，传送对象可以是数据或地址  ①dst、src数据类型需要一致（同为16位或8位） ②dst、src不能同时进行存储器寻址 ③dst不能为数据段寄存器（DS） ④dst为段寄存器时（不为DS），src不能为立即数或段寄存器   xchg指令  格式：xchg opr1,opr2 功能：将操作数opr1和opr2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg">
+<meta property="article:published_time" content="2025-06-29T14:12:41.727Z">
+<meta property="article:modified_time" content="2025-06-29T14:13:49.285Z">
+<meta property="article:author" content="Samdn">
+<meta property="article:tag" content="个人笔记">
+<meta property="article:tag" content="汇编语言">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "汇编语言指令",
+  "url": "http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/huibian/",
+  "image": "https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg",
+  "datePublished": "2025-06-29T14:12:41.727Z",
+  "dateModified": "2025-06-29T14:13:49.285Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Samdn",
+      "url": "http://megumi-sea.love/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/huibian/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '汇编语言指令',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309234932.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</span></a><a class="nav-page-title" href="/"><span class="site-name">汇编语言指令</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">汇编语言指令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-06-29T14:12:41.727Z" title="发表于 2025-06-29 22:12:41">2025-06-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-06-29T14:13:49.285Z" title="更新于 2025-06-29 22:13:49">2025-06-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="数据传输类"><a href="#数据传输类" class="headerlink" title="数据传输类"></a>数据传输类</h1><ol>
+<li>mov指令</li>
+</ol>
+<p>格式：mov dst,src</p>
+<p>mov指令是最常用的数据传送指令，传送对象可以是数据或地址</p>
+<blockquote>
+<p>①dst、src数据类型需要一致（同为16位或8位）</p>
+<p>②dst、src不能同时进行存储器寻址</p>
+<p>③dst不能为数据段寄存器（DS）</p>
+<p>④dst为段寄存器时（不为DS），src不能为立即数或段寄存器</p>
+</blockquote>
+<ol start="2">
+<li>xchg指令</li>
+</ol>
+<p>格式：xchg opr1,opr2</p>
+<p>功能：将操作数opr1和opr2的内容互换</p>
+<blockquote>
+<p>①数据类型需一致</p>
+<p>②只能在通用寄存器&#x2F;通用寄存器→存储单元之间进行交换</p>
+<p>③不能采用立即寻址</p>
+</blockquote>
+<ol start="3">
+<li>lea指令</li>
+</ol>
+<p>格式：lea dst,src</p>
+<p>功能：dst←src的偏移地址</p>
+<blockquote>
+<p>①src必须是存储器寻址，dst必须是除段寄存器之外的16位寄存器</p>
+</blockquote>
+<ol start="4">
+<li>xlat指令（查表指令）</li>
+</ol>
+<p>格式：xlat</p>
+<p>功能：AL←((BX)+(AL))将BX+AL的值位偏移地址访问数据段</p>
+<p>，读一个字节的数据转给AL</p>
+<ol start="5">
+<li>push和pop指令</li>
+</ol>
+<blockquote>
+<p>①push和pop分别是堆栈的进栈和出栈操作指令</p>
+<p>②堆栈区的<strong>高地址端</strong>为<strong>栈底</strong>，<strong>低地址端</strong>为<strong>栈顶</strong></p>
+<p>③汇编语言程序中所用的堆栈由堆栈端定义，堆栈段寄存器为ss，堆栈指针为16位寄存器sp，数据进栈与出栈<strong>均以字为单位进行</strong></p>
+</blockquote>
+<ul>
+<li>push指令</li>
+</ul>
+<p>格式：push opr1</p>
+<p>将字类型操作数opr存入堆栈</p>
+<blockquote>
+<p>①opr不能用立即寻址</p>
+<p>②opr只能是字类型</p>
+</blockquote>
+<ul>
+<li>pop指令</li>
+</ul>
+<p>格式：pop opr</p>
+<p>将栈顶元素取出并存入字类型操作数opr</p>
+<blockquote>
+<p>①②同上</p>
+<p>③opr不能是代码段寄存器（CS）</p>
+</blockquote>
+<p>例：如何将CS传递给DS？</p>
+<p>push CS</p>
+<p>pop DS</p>
+<ol start="6">
+<li>in指令</li>
+</ol>
+<p>格式：</p>
+<p>in AL,PORT	;直接寻址方式，port为端口地址</p>
+<p>in AL,DX		 ;间接寻址方式，DX内容为端口地址</p>
+<p>in AX,PORT	;直接寻址</p>
+<p>in AX,DX		 ;间接寻址</p>
+<p>功能：输入指令，其功能是将I&#x2F;O端口数据传送到AL或AX寄存器</p>
+<ol start="7">
+<li>out指令</li>
+</ol>
+<p>格式：</p>
+<p>out PORT,AL	;直接寻址方式，port为端口地址</p>
+<p>out DX,AL		 ;间接寻址方式，DX内容为端口地址</p>
+<p>out PORT,AX	;直接寻址</p>
+<p>out DX,AX		 ;间接寻址</p>
+<p>功能：输出指令，其功能是将AL或AX寄存器中的数据传送到I&#x2F;O端口</p>
+<h1 id="算数指令类（加减乘除）"><a href="#算数指令类（加减乘除）" class="headerlink" title="算数指令类（加减乘除）"></a>算数指令类（加减乘除）</h1><p>加法类指令</p>
+<ol>
+<li>add指令</li>
+</ol>
+<p>格式：add dst,src</p>
+<p>功能：dst←（dst）+（src）</p>
+<ol start="2">
+<li>adc指令</li>
+</ol>
+<p>格式：adc dst,src</p>
+<p>功能：dst←（dst）+（src）+CF</p>
+<p>adc指令为<strong>带进位</strong>加法指令，即在普通加法的基础上加上CF标志值。</p>
+<ol start="3">
+<li>inc指令</li>
+</ol>
+<p>格式：inc opr</p>
+<p>功能：opr←（opr）+1</p>
+<p>也称为加一指令，用于计数和修改地址指针</p>
+<blockquote>
+<p>①opr不能为立即数或段寄存器</p>
+<p>②必须有明确数据类型（不能用[bx]之类的地址表示</p>
+<p>③inc不会影响CF</p>
+</blockquote>
+<p>减法类指令</p>
+<ol>
+<li>sub指令</li>
+</ol>
+<p>格式：sub dst,src</p>
+<p>功能：dst←（dst）-（src）</p>
+<p>sub指令执行常规减法运算，使用上要求与add一致</p>
+<ol start="2">
+<li>sbb指令</li>
+</ol>
+<p>格式：sbb dst,src</p>
+<p>功能：dst←（dst）-（src）-CF</p>
+<p>sbb指令为带进位的减法指令，即在普通减法的基础上再减去前面指令产生的CF标志值。主要用于多字节数相减</p>
+<ol start="3">
+<li>dec指令</li>
+</ol>
+<p>格式：dec opr</p>
+<p>功能：opr←（opr）-1</p>
+<p>与inc详相似</p>
+<ol start="4">
+<li>cmp指令</li>
+</ol>
+<p>格式：cmp dst,src</p>
+<p>功能：（dst）-（src）</p>
+<p>也称为<strong>比较指令</strong>，执行一次减法运算，影响全部状态标准，但<strong>不保存运算结果</strong></p>
+<p>使用上要求与sub相同</p>
+<p>通过对flags寄存器的值实现比较</p>
+<ol start="5">
+<li>nec指令</li>
+</ol>
+<p>格式：nec opr</p>
+<p>功能：opr←0 -（opr）</p>
+<p>也称为<strong>求补指令</strong>，用于求有符号数（补码表示）的<strong>相反数</strong></p>
+<blockquote>
+<p>opr不能为立即数或段寄存器，且必须有明确的数据类型</p>
+</blockquote>
+<p>乘法类指令</p>
+<ol>
+<li>mul指令</li>
+</ol>
+<p>格式：mul src</p>
+<p>功能：mul为<strong>无符号数</strong>乘法指令。当src为<strong>字节类型</strong>数据时，被乘数默认为AL，乘积存放在AX中；当src为字类型数据时，被乘数默认为AX，乘积存放在DX:AX（乘积的高16位存于DX，低16位存于AX）。</p>
+<p>举例：</p>
+<p>mul BL ;<strong>AX</strong>←（<strong>AL</strong>）x（BL）</p>
+<p>mul CX ;<strong>DX:AX</strong>←（<strong>AX</strong>）x（CX）</p>
+<blockquote>
+<p>src不能为立即数或段寄存器，需要明确类型</p>
+<p>影响CF和OF</p>
+</blockquote>
+<p>除法类指令</p>
+<ol>
+<li>div指令</li>
+</ol>
+<p>格式：div src ;src为<strong>除数</strong>，被除数隐含</p>
+<p>功能：div为<strong>无符号数</strong>除法指令。当src为<strong>字节类型</strong>数据时，被除数默认为AX，商存放在AL中；当src为字类型数据时，被除数默认为DX:AX，商存放在AX，余数存于DX。</p>
+<p>举例：</p>
+<p>div BL ;（AX）&#x2F;（BL）商存放在AL，余数存放在AH</p>
+<p>div CX ;（DX:AX）&#x2F;CX 商存放在AX，余数存放在DX</p>
+<blockquote>
+<p>参考mul</p>
+<p>当商超出了AL的表示范围，会出现除法溢出的情况，运行终止</p>
+</blockquote>
+<h1 id="逻辑运算类"><a href="#逻辑运算类" class="headerlink" title="逻辑运算类"></a>逻辑运算类</h1><ol>
+<li>and指令</li>
+</ol>
+<p>格式：and dst,src</p>
+<p>功能：dst←（dst）∧（src）</p>
+<p>dst和src做与运算 —— 0 ∧ x &#x3D; 0 、1 ∧ x &#x3D; x</p>
+<blockquote>
+<p>会对CF、OF标志清零</p>
+</blockquote>
+<ol start="2">
+<li>or指令</li>
+</ol>
+<p>格式：or dst,src</p>
+<p>功能：dst←（dst）∨（src）</p>
+<ol start="3">
+<li>xor指令</li>
+</ol>
+<p>格式：sub dst,src</p>
+<p>功能：dst←（dst）⊕（src）</p>
+<p>逻辑<strong>异或</strong>的运算指令：相同为0，不同为1</p>
+<ol start="4">
+<li>not指令</li>
+</ol>
+<p>格式：not opr</p>
+<p>功能：opr←（opr）</p>
+<p>逻辑<strong>非</strong>的运算指令：直接取反 </p>
+<ol start="5">
+<li>test指令</li>
+</ol>
+<p>格式：test dst,src</p>
+<p>功能：（dst）∧（src）</p>
+<p>执行逻辑与and相同，但不保存运算结果，只影响条件标志</p>
+<h1 id="位移操作类指令"><a href="#位移操作类指令" class="headerlink" title="位移操作类指令"></a>位移操作类指令</h1><p>(1)逻辑左移指令:SHL DST,CNT</p>
+<p>(2)逻辑右移指令:SHR DST,CNT</p>
+<p>(3)算术左移指令:SAL DST,CNT</p>
+<p>(4)算术右移指令:SAR DST,CNT</p>
+<p>(5)循环左移指令:ROL DST,CNT</p>
+<p>(6)循环右移指令:ROR DST,CNT</p>
+<p>(7)带进位循环左移指令:RCL DST,CNT</p>
+<p>(8)带进位循环右移指令:RCR DST,CNT</p>
+<p>其中，DST是被移位的操作数，CNT是移位的次数</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20250623120113525.png" alt="image-20250623120113525"></p>
+<p>逻辑左移：最高位丢失，最低位补0</p>
+<p>逻辑右移：最高位补0，最低为丢失</p>
+<h1 id="程序控制类指令"><a href="#程序控制类指令" class="headerlink" title="程序控制类指令"></a>程序控制类指令</h1><ol>
+<li>无条件转移指令</li>
+</ol>
+<p>格式：jmp opr（改变cs:ip）</p>
+<p>功能：按opr描述的转移地址，无条件转移到目标指令执行</p>
+<p>举例：</p>
+<p>jmp 02A5H:031AH; 把cs设置为02A5，IP设为031A</p>
+<p>mov AX,3A14H</p>
+<p>jmp AX; 把AX作为偏移地址加载到指针寄存器IP</p>
+<ol start="2">
+<li>条件转移指令</li>
+</ol>
+<p>在满足特定条件下，转移到指定的目标指令处继续往下执行程序。不满足时直接按顺序执行</p>
+<p>条件转移指令均为段内短距离转移指令。转移成功时，将IP修改为目标指令的偏移地址；转移失败时不改变IP</p>
+<p>1）简单条件转移指令</p>
+<p>只对单个条件标志进行检测，根据结果判断是否跳转</p>
+<p>(1)格式:JC label<br>功能:若CF&#x3D;1，则转移至label处，否则顺序执行。</p>
+<p>(2)格式:JNC label<br>功能:若CF&#x3D;0，则转移至Iabel处，否则顺序执行。</p>
+<p>(3)格式:JZ&#x2F;JE label<br>功能:若ZF&#x3D;1，则转移至label处，否则顺序执行。</p>
+<p>(4)格式:JNZ&#x2F;JNE Iabel<br>功能:若ZF&#x3D;0，则转移至label处，否则顺序执行。</p>
+<p>(5)格式:JS label<br>功能:若SF&#x3D;1，则转移至Iabel处，否则顺序执行。</p>
+<p>(6)格式:JNS Iabel<br>功能:若SF&#x3D;0，则转移至label处，否则顺序执行。</p>
+<p>(7)格式:J0 label<br>功能:若OF&#x3D;1，则转移至label处，否则顺序执行。</p>
+<p>(8)格式:JNO label<br>功能:若OF&#x3D;0，则转移至Iabel处，否则顺序执行。</p>
+<p>(9)格式:JP&#x2F;JPE label<br>功能:若PF&#x3D;1，则转移至label处，否则顺序执行。</p>
+<p>(10)格式:JNP&#x2F;JPO label<br>功能:若PF&#x3D;0，则转移至Iabel处，否则顺序执行。</p>
+<p>2）无符号数比较转移指令</p>
+<p> 应该不考，先跳了orz，后面想学了再补上</p>
+<p>3）有符号数比较转移指令</p>
+<p>同上</p>
+<ol start="3">
+<li>循环指令</li>
+</ol>
+<p>格式：loop label;  lable为循环入口指令标号<br>功能：loop指令用于控制<strong>计数型循环</strong>，作为循环程序段的最后一条指令。循环计数器指定用CX寄存器，采用减一计数方式，初值为循环次数；CX未减到0时，转移到标号label处，继续循环，直到CX为0，循环结束</p>
+<p>loop指令功能等效于下面两条指令：</p>
+<p>dec DX<br>JNZ label</p>
+<p>注意：loop指令转移范围为段内短距离转移</p>
+<ol start="4">
+<li>处理器控制类指令（一般不考）</li>
+</ol>
+<p>这类指令用于强行设置某些标志，或改变处理器的某些工作方式<br>(1)格式:STC<br>功能:CF←1<br>(2)格式:CLC<br>功能:CF←0<br>(3)格式:CMC<br>功能:CF←CF取反<br>(4)格式:STD<br>功能:DF←1，控制串指针以减量方式修改<br>(5)格式:CLD<br>功能:DF←0，控制串指针以增量方式修改<br>(6)格式:STI;开中断指令<br>功能:IF←1，允许CPU响应外部可屏蔽中断请求<br>(7)格式:CLI;关中断指令<br>功能:IF←0，禁止CPU响应外部可屏蔽中断请求<br>(8)格式:HLT ;停机指令<br>功能:暂停CPU的工作，等待外部中断发生:(重新唤醒CPU)<br>(9)格式:NOP ;空操作指令<br>功能:该指令不执行任何有效操作，主要用于满足程序中的延时要求。</p>
+<h1 id="基本串指令"><a href="#基本串指令" class="headerlink" title="基本串指令"></a>基本串指令</h1><p>1）串传送（movs）类指令</p>
+<p>MOVS类指令将源串指针所指的串元素值，传送到目的串指针所指的串元素位置。(功能跟mov基本一致)</p>
+<p>(1)字节串传送指合MOVSB指令格式:MOVSB;源串和目的串地址隐含指令功能:该指令完成以下操作:<br>①传送一个字节:ES:DI←(DS:SI);<br>②)修改串指针:SI←(SI)±1，DI←(DI)±1</p>
+<p>(2)字串传送指合MOVSW指令格式:MOVSW:源串和目的串地址隐含指令功能:该指令完成以下操作:<br>①传送一个字:ES:DI←(DS:SI);<br>②修改串指针:SI←(SI)±2，DI←(DI)±2</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://megumi-sea.love">Samdn</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/huibian/">http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/huibian/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://megumi-sea.love" target="_blank">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a><a class="post-meta__tags" href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a></div><div class="post-share"><div class="social-share" data-image="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/design_of_java/" title="大鱼吃小鱼——java课程设计小游戏开发"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">大鱼吃小鱼——java课程设计小游戏开发</div></div><div class="info-2"><div class="info-item-1"> 游戏概述  本游戏是一个基于 Java 的二维游戏，玩家控制一条鱼在海洋环境中生存，通过吃掉敌方小鱼来获得分数并提升等级。游戏包含了多个关卡和敌人类型，具有简单的碰撞检测和游戏状态管理。 (因为手头上找不到合适的游戏素材，所以都是拿现有的东西拼凑的，内容可替换)  开发环境   开发工具：Vscode 编程语言：Java 主要库： javax.swing：用于创建图形用户界面 java.awt：用于绘图和图形处理 java.util：用于数据结构和集合     类基本功能实现  游戏窗口 类：GameWin.java 作用：设置游戏窗口的大小、标题、背景颜色，并初始化游戏状态。 关键方法： launch()：设置窗口属性，添加鼠标和键盘事件监听器，并启动游戏循环。 paint(Graphics...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/design_of_java/" title="大鱼吃小鱼——java课程设计小游戏开发"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-20</div><div class="info-item-2">大鱼吃小鱼——java课程设计小游戏开发</div></div><div class="info-2"><div class="info-item-1"> 游戏概述  本游戏是一个基于 Java 的二维游戏，玩家控制一条鱼在海洋环境中生存，通过吃掉敌方小鱼来获得分数并提升等级。游戏包含了多个关卡和敌人类型，具有简单的碰撞检测和游戏状态管理。 (因为手头上找不到合适的游戏素材，所以都是拿现有的东西拼凑的，内容可替换)  开发环境   开发工具：Vscode 编程语言：Java 主要库： javax.swing：用于创建图形用户界面 java.awt：用于绘图和图形处理 java.util：用于数据结构和集合     类基本功能实现  游戏窗口 类：GameWin.java 作用：设置游戏窗口的大小、标题、背景颜色，并初始化游戏状态。 关键方法： launch()：设置窗口属性，添加鼠标和键盘事件监听器，并启动游戏循环。 paint(Graphics...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learnng/" title="Java基本语法入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-03</div><div class="info-item-2">Java基本语法入门</div></div><div class="info-2"><div class="info-item-1">​    这是一份个人向的笔记，供个人复习参考用，也适合有一定程序语言基础的初学者入门。希望看完能够对你会有所帮助^ ^（可以配合网课食用）  第一个程序：  123456789//class是一个类，helloworld是类名，类名尽量跟文件名保持一致public class helloworld&#123;	    //main:主方法（程序的入口）    public static void main(String[] args) &#123;        //输出双引号中的语句        System.out.println(&quot;Hello, World!&quot;);	    &#125;&#125;     tips：编写Java时应该注意以下内容  大小写敏感：如标识符Hello和hello是不一样的  类名：对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 MyFirstJavaClass  主方法入口：所有的 Java 程序由 public static void main(String[]...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c/lanqiao_learning/" title="蓝桥杯备赛用（2025）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-12</div><div class="info-item-2">蓝桥杯备赛用（2025）</div></div><div class="info-2"><div class="info-item-1">  输入带空格的字符串应该用fgets，scanf遇到空格时会停止读取，后续内容被截断 fgets用法如下：   1fgets(input, sizeof(input), stdin);   快速排序  ​	需要自己先定义一个函数compare（函数名可不为compare） 12345int compare(const void *a, const void *b) &#123;	int num1 = *(int*)a; 	int num2 = *(int*)b; 	return num2 - num1; // 返回正数时，num1 排在 num2 后面（实现降序）&#125;  ​	使用时如下： 1qsort( arr , n , sizeof ( int ) , compare );	//arr是数组名，n为数组的长度， compare为上面需要自己定义的函数  ​	二编：好麻烦不想用qsort了，otto教了一个c++的sort写法： 123456789101112131415161718192021222324252627#include...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6/lisan/" title="离散数学速成"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-30</div><div class="info-item-2">离散数学速成</div></div><div class="info-2"><div class="info-item-1"> 命题逻辑的基本概念  命题 命题：能判断真值的陈述句 真值：真和假（可以用1和0表示） 真命题：真值为真的命题 假命题：真值为假的命题 原子命题：不能再被分解的每题 复合命题：由原子命题通过联结词联结而成的命题  如何判断： ①是否为陈述句 ②是否有唯一真值 命题联结词有五种联结词，分别为否定、合取、析取、蕴涵、等价。  否定：否定的真值与原真值结果相反（相当于数字逻辑中的 “非”） 合取：只有当两个真值都为真时，合取才为真（相当于数字逻辑中的 “与”） 析取：只要有一个真值为真，析取的值就为真（相当于数字逻辑中的 “或”） 蕴涵（需要单独记忆）：当p为真且q为假时，p→q为假(1→0 0)，其他情况都为真。p q的顺序不能颠倒   只要p，就q   因为p，所以q   p仅当q              只有q才p   除非q才p  ...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown/markdown_learning/" title="Markdown简单入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-13</div><div class="info-item-2">Markdown简单入门</div></div><div class="info-2"><div class="info-item-1">Markdown简单入门    Samdn    泥嚎 \ (@ ^ 0 ^ @ ) &#x2F; ！这是一份 专业的 偏个人向学习的简单笔记，可能存在不少问题或缺漏，如果有错误的话也希望您能帮我指正orz   本文使用的工具是Vscode，需要下载的插件有 Markdown All in one、Markdown Image、Markdown Preview Enhance，Typora之后如果学会了再做补充（写法大概是一样的，也不用下载前面的插件，而且有更多简便的操作）。可以配合这个视频食用  【全网最详细Markdown入门使用教程】40分钟教会你用免费的vscode做出好看的笔记 下面因为演示了标题怎么写所以目录顺序可能会有点怪，凑合看看（预防针 那么就直接开始写了:  下面是一些简单的基本语法：  关于标题一级标题二级标题…… 最多应该是三级标题  在Vscode中的写法是：  # 一级标题## 二级标题### …… （#后要加空格）      怎么写列表 无序列表   列表1   列表2   列表3   有序列表 嵌套 工作清单  事件a  事件b  事件c    ...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/sql/" title="sql基本语法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-05</div><div class="info-item-2">sql基本语法</div></div><div class="info-2"><div class="info-item-1">关键字不一定使用大写，一般是便于区分内容  数据库操作  创建数据库 1CREATE DATABASE `demo`;   反引号主要是用于防止创建的名称和关键字重复导致报错，如database 创建之后可以用show检查是否已经生成 1SHOW DATABASE;    删除数据库 1DROP DATABASE `demo`;    使用数据库 1USE `demo`;       表格操作  先了解一下有哪些数据类型    int decimal(m,n) varchar(n) blob date timestamp    整数 小数 m代表总共几位数，n代表小数点部分占几位数 字符串 n代表存放多少字节 图片 影像 档案 ‘YYYY-MM-DD’ 日期 ‘YYYY-MM-DD HH:MM:SS’ 记录时间   创建表格 12345CREATE TABLE `student`(	`student_id` INT PRIMARY KEY,	`name` VARCHAR(20),	`major`...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Samdn</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个一晚上速成的小站，比较简陋大家凑合看看就行qaq</div></div><div class="card-widget user-map" id="user-map"><div class="item-headline"><i class="fas fa-heartbeat"></i><span>访客地图</span></div><div class="item-content"><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8"></script></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">数据传输类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E6%8C%87%E4%BB%A4%E7%B1%BB%EF%BC%88%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">算数指令类（加减乘除）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%B1%BB"><span class="toc-number">3.</span> <span class="toc-text">逻辑运算类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%8D%E7%A7%BB%E6%93%8D%E4%BD%9C%E7%B1%BB%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">位移操作类指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6%E7%B1%BB%E6%8C%87%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text">程序控制类指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%B8%B2%E6%8C%87%E4%BB%A4"><span class="toc-number">6.</span> <span class="toc-text">基本串指令</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/huibian/" title="汇编语言指令">汇编语言指令</a><time datetime="2025-06-29T14:12:41.727Z" title="发表于 2025-06-29 22:12:41">2025-06-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/design_of_java/" title="大鱼吃小鱼——java课程设计小游戏开发">大鱼吃小鱼——java课程设计小游戏开发</a><time datetime="2025-06-20T11:20:20.218Z" title="发表于 2025-06-20 19:20:20">2025-06-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/sql/" title="sql基本语法">sql基本语法</a><time datetime="2025-06-05T00:28:49.909Z" title="发表于 2025-06-05 08:28:49">2025-06-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6/lisan/" title="离散数学速成">离散数学速成</a><time datetime="2025-05-30T13:41:50.383Z" title="发表于 2025-05-30 21:41:50">2025-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learnng/" title="Java基本语法入门">Java基本语法入门</a><time datetime="2025-05-03T12:05:03.232Z" title="发表于 2025-05-03 20:05:03">2025-05-03</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309235030.png);"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Samdn</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: '0WhQ8k0Y4jiLLX5VxgVQj7p8-MdYXbMMI',
+      appKey: 'pZDjylYhUc1rb5B1DxF1yrhm',
+      avatar: 'monsterid',
+      serverURLs: 'https://samdn.megumi-sea.love',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script defer src="/live2d-widget/dist/autoload.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
