@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>面向对象 | ꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</title><meta name="author" content="Samdn"><meta name="copyright" content="Samdn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="类和对象  ​	类：对象共同特征的描述 ​	对象：真实存在的具体东西 在java中，必须先设计类，才能获取对象。  如何定义类  1234567public class 类名&#123;	1.成员变量（代表属性，一般是名词，如手机的价格、品牌）	2.成员方法（行为，一般为动词，如手机可以玩游戏）	3.构造器（后面学习）	4.代码块（同上）	5.内部类（同上）&#125;     如何得到类的对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象">
+<meta property="og:url" content="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learning2/index.html">
+<meta property="og:site_name" content="꒰ঌ(🎀ᗜ&#96; v ´ᗜ 🌸)໒꒱💈">
+<meta property="og:description" content="类和对象  ​	类：对象共同特征的描述 ​	对象：真实存在的具体东西 在java中，必须先设计类，才能获取对象。  如何定义类  1234567public class 类名&#123;	1.成员变量（代表属性，一般是名词，如手机的价格、品牌）	2.成员方法（行为，一般为动词，如手机可以玩游戏）	3.构造器（后面学习）	4.代码块（同上）	5.内部类（同上）&#125;     如何得到类的对象">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg">
+<meta property="article:published_time" content="2025-07-21T07:06:09.961Z">
+<meta property="article:modified_time" content="2025-07-25T15:28:46.372Z">
+<meta property="article:author" content="Samdn">
+<meta property="article:tag" content="个人笔记">
+<meta property="article:tag" content="编程语言">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "面向对象",
+  "url": "http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learning2/",
+  "image": "https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg",
+  "datePublished": "2025-07-21T07:06:09.961Z",
+  "dateModified": "2025-07-25T15:28:46.372Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Samdn",
+      "url": "http://megumi-sea.love/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learning2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '面向对象',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309234932.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</span></a><a class="nav-page-title" href="/"><span class="site-name">面向对象</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">面向对象</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-21T07:06:09.961Z" title="发表于 2025-07-21 15:06:09">2025-07-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-25T15:28:46.372Z" title="更新于 2025-07-25 23:28:46">2025-07-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/">java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><ol>
+<li><h1 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h1></li>
+</ol>
+<p>​	类：对象共同特征的描述</p>
+<p>​	对象：真实存在的具体东西</p>
+<p>在java中，必须先设计类，才能获取对象。</p>
+<ul>
+<li><h2 id="如何定义类"><a href="#如何定义类" class="headerlink" title="如何定义类"></a>如何定义类</h2></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class 类名&#123;</span><br><span class="line">	1.成员变量（代表属性，一般是名词，如手机的价格、品牌）</span><br><span class="line">	2.成员方法（行为，一般为动词，如手机可以玩游戏）</span><br><span class="line">	3.构造器（后面学习）</span><br><span class="line">	4.代码块（同上）</span><br><span class="line">	5.内部类（同上）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><h2 id="如何得到类的对象"><a href="#如何得到类的对象" class="headerlink" title="如何得到类的对象"></a>如何得到类的对象</h2></li>
+</ul>
+<p>类名 对象名 &#x3D; new 类名();</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Phone p = new Phone();</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><h2 id="如何使用对象"><a href="#如何使用对象" class="headerlink" title="如何使用对象"></a>如何使用对象</h2></li>
+</ul>
+<p>访问属性：对象名.成员变量</p>
+<p>访问行为：对象名.方法名（…）</p>
+<ul>
+<li>使用时建议</li>
+</ul>
+<blockquote>
+<p>（1）类名首字母建议大写、英文、有意义、满足驼峰模式，不能用关键字，满足标识符规定</p>
+<p>（2）一个代码文件中可以定义多个类，但只能有一个类是public修饰的，public修饰的类名必须是Java代码的文件名称（一般建议一个文件只定义一个类）</p>
+<p>（3）定义类时不需要给属性赋值</p>
+</blockquote>
+<ol start="2">
+<li><h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1></li>
+</ol>
+<p>​	原则：对象代表什么，就要封装对应的数据，并提供数据对应的行为</p>
+<ul>
+<li><h2 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h2></li>
+</ul>
+<p>​	简化编程。只需要找对象，调方法就行</p>
+<p>​	降低学习成本，可以少学、少记，或者不用学、不用记对象有哪些方法，需要时去找就行</p>
+<ul>
+<li><h2 id="使用private关键字判断输入值是否合理"><a href="#使用private关键字判断输入值是否合理" class="headerlink" title="使用private关键字判断输入值是否合理"></a>使用private关键字判断输入值是否合理</h2></li>
+</ul>
+<p>如果直接对<strong>price</strong>赋值一个<strong>负数</strong>，在语法上是没有问题的，不会出现报错，但是不符合常理</p>
+<blockquote>
+<p>private关键字</p>
+<p>（1）是一个权限修饰符</p>
+<p>（2）可以修饰成员（变量和方法）</p>
+<p>（3）被private修饰的成员只能在本类中访问</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Phone</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String brand;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> price;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过以上修饰后，当再次对新的对象赋值会出现报错(赋值合理也会报错)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Phone p1 = new Phone();</span><br><span class="line">p1.price = 1999;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>改写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Phone</span>&#123;</span><br><span class="line">    <span class="comment">//属性</span></span><br><span class="line">    <span class="keyword">private</span> String brand;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//对于每一个私有的变量都需要使用get和set方法</span></span><br><span class="line">    <span class="comment">//set方法:给成员变量赋值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setBrand</span><span class="params">(String n)</span> &#123;</span><br><span class="line">        brand = n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//get方法:对外提供成员变量的值</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getBrand</span><span class="params">()</span> &#123;        </span><br><span class="line">        <span class="keyword">return</span> brand;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPrice</span><span class="params">(<span class="type">double</span> p)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(p &gt; <span class="number">0</span> &amp;&amp; p &lt; <span class="number">1000000</span>) &#123; <span class="comment">// 假设价格在合理范围内</span></span><br><span class="line">            price = p;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;价格不合理，请输入正确的价格&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getPrice</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//行为</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">call</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;正在拨打电话...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sendMessage</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;正在发送短信...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>分别使用“setXxx(参数)”方法为变量赋值与“getXxx()”方法获取变量的值。方法用public修饰（get方法要根据数据变量的类型确定返回值类型</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class PhoneTest&#123;</span><br><span class="line">    public static void main(String[] args) &#123;    </span><br><span class="line">        //创建手机对象</span><br><span class="line">        Phone p = new Phone();</span><br><span class="line"></span><br><span class="line">        //给手机赋值</span><br><span class="line">        p.setBrand(&quot;xiaomi&quot;);</span><br><span class="line">        p.setPrice(1999.98);</span><br><span class="line"></span><br><span class="line">        //获取手机对象中的值</span><br><span class="line">        // System.out.println(p.brand);</span><br><span class="line">        // System.out.println(p.price);</span><br><span class="line">        System.out.println(p.getBrand());</span><br><span class="line">        System.out.println(p.getPrice());</span><br><span class="line"></span><br><span class="line">        //调用手机中的方法</span><br><span class="line">        p.call();</span><br><span class="line">        p.sendMessage();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li><h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1></li>
+</ol>
+<ul>
+<li><h2 id="就近原则"><a href="#就近原则" class="headerlink" title="就近原则"></a>就近原则</h2></li>
+</ul>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Phone</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> price;<span class="comment">//0</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">price</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">		System.out.println(price);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​	成员变量与局部变量重复时，会采用就近原则。由此可知上方输出的是局部变量中的price，结果为10.</p>
+<p>​	如果一定要成员变量price，需要使用this关键字</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Phone</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> price;<span class="comment">//0</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">price</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">		System.out.println(<span class="built_in">this</span>.price);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​	this用于区分成员变量和局部变量</p>
+<ol start="4">
+<li><h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1></li>
+</ol>
+<p>​	也称为构造器、构造函数</p>
+<p>​	作用：在创建对象时给成员变量进行初始化（赋值，功能相当于上面的set方法）</p>
+<h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><p>（1）方法名与类名相同，大小写一致</p>
+<p>（2）没有返回值类型，也没有void</p>
+<p>（3）没有具体返回值（不能由return带回结果数据）</p>
+<blockquote>
+<p> 构造时机：</p>
+<p>创建对象时由虚拟机调用，不能手动调用构造方法</p>
+<p>每次创建一次对象，就会调用一次构造方法</p>
+</blockquote>
+<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><p><strong>①构造方法的定义</strong></p>
+<p>​	如果没有定义构造方法，系统将给出一个默认的无参数的构造方法</p>
+<p>​	<u>如果定义了构造方法，系统将不再提供默认的构造方法</u>（如：你已经定义了一个有参构造，再去使用无参构造方法的话就会报错）</p>
+<p><strong>②构造方法的重载</strong></p>
+<p>​	带参构造方法，和无参构造方法，两者方法名相同，但是参数不同，这叫构造方法的重载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//无参构造</span><br><span class="line">public Student()&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//带参构造</span><br><span class="line">public Student(String name, int age)&#123;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>③推荐的使用方法</strong></p>
+<p>​	无论是否使用，都要手动书写两种构造方法</p>
+<ol start="5">
+<li><h1 id="JavaBean类"><a href="#JavaBean类" class="headerlink" title="JavaBean类"></a>JavaBean类</h1></li>
+</ol>
+<p>①类名要见名知意（驼峰命名）</p>
+<p>②成员变量使用<strong>private</strong>修饰</p>
+<p>③提供无参和带参的两种构造方法</p>
+<p>④成员方法</p>
+<ul>
+<li>提供每个成员变量对应的<strong>setXxx()&#x2F;getXxx()</strong></li>
+<li>其他的行为（若没有则不用写）</li>
+</ul>
+<p>（有一些idea可用的快捷键，但是我自己用的是vscode就先不写了）</p>
+<ol start="6">
+<li><h1 id="对象内存图"><a href="#对象内存图" class="headerlink" title="对象内存图"></a>对象内存图</h1></li>
+</ol>
+<p>一个对象的内存图</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20250723111241184.png" alt="image-20250723111241184"></p>
+<p>当所有方法执行完毕后，就会从栈里出去。main方法出栈后里面的变量就没有人使用了，堆内存中的空间也会消失。</p>
+<p>两个对象的内存图</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20250723131141745.png" alt="image-20250723131141745"></p>
+<p>两个引用指向同一个对象</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20250723135131542.png" alt="image-20250723135131542"></p>
+<p>区别在于：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Student</span> <span class="variable">stu2</span> <span class="operator">=</span> stu1;</span><br></pre></td></tr></table></figure>
+
+<p>此时stu2指向的地址跟stu1相同，后续对stu2的操作也会影响stu1。如上图：当对stu2.name赋值为“阿珍”时，原本的名字也被重置了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://megumi-sea.love">Samdn</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learning2/">http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learning2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://megumi-sea.love" target="_blank">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a></div><div class="post-share"><div class="social-share" data-image="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/uncategorized/QA/" title="Ask Anything! (Test)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Ask Anything! (Test)</div></div><div class="info-2"><div class="info-item-1">假装这是一个提问箱  因为现在还不会搭但是突然想玩了拿这个凑合凑合👉👈 食用方法： 在下方输入框评论框输入想问的问题！可以的话在昵称处留下你的名字&#x2F;cn以及联系方式（邮箱），不想留的话也可以会视为匿名提问（可能不会有回复的提示需要手动回到该页面中查看） 不能接受的东西有   猎奇  随地鉴证  诋毁他人的发言  大概就是以上这些内容꒰ঌ(🎀ᗜ&#96; v ´ᗜ 🌸)໒꒱💈后面如果有什么补充的再修改  </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learnng/" title="Java基本语法入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-03</div><div class="info-item-2">Java基本语法入门</div></div><div class="info-2"><div class="info-item-1">​    这是一份个人向的笔记，供个人复习参考用，也适合有一定程序语言基础的初学者入门。希望看完能够对你会有所帮助^ ^（可以配合网课食用）  第一个程序：  123456789//class是一个类，helloworld是类名，类名尽量跟文件名保持一致public class helloworld&#123;	    //main:主方法（程序的入口）    public static void main(String[] args) &#123;        //输出双引号中的语句        System.out.println(&quot;Hello, World!&quot;);	    &#125;&#125;     tips：编写Java时应该注意以下内容  大小写敏感：如标识符Hello和hello是不一样的  类名：对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 MyFirstJavaClass  主方法入口：所有的 Java 程序由 public static void main(String[]...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c/lanqiao_learning/" title="蓝桥杯备赛用（2025）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-12</div><div class="info-item-2">蓝桥杯备赛用（2025）</div></div><div class="info-2"><div class="info-item-1">  输入带空格的字符串应该用fgets，scanf遇到空格时会停止读取，后续内容被截断 fgets用法如下：   1fgets(input, sizeof(input), stdin);   快速排序  ​	需要自己先定义一个函数compare（函数名可不为compare） 12345int compare(const void *a, const void *b) &#123;	int num1 = *(int*)a; 	int num2 = *(int*)b; 	return num2 - num1; // 返回正数时，num1 排在 num2 后面（实现降序）&#125;  ​	使用时如下： 1qsort( arr , n , sizeof ( int ) , compare );	//arr是数组名，n为数组的长度， compare为上面需要自己定义的函数  ​	二编：好麻烦不想用qsort了，otto教了一个c++的sort写法： 123456789101112131415161718192021222324252627#include...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/design_of_java/" title="大鱼吃小鱼——java课程设计小游戏开发"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-20</div><div class="info-item-2">大鱼吃小鱼——java课程设计小游戏开发</div></div><div class="info-2"><div class="info-item-1"> 游戏概述  本游戏是一个基于 Java 的二维游戏，玩家控制一条鱼在海洋环境中生存，通过吃掉敌方小鱼来获得分数并提升等级。游戏包含了多个关卡和敌人类型，具有简单的碰撞检测和游戏状态管理。 (因为手头上找不到合适的游戏素材，所以都是拿现有的东西拼凑的，内容可替换)  开发环境   开发工具：Vscode 编程语言：Java 主要库： javax.swing：用于创建图形用户界面 java.awt：用于绘图和图形处理 java.util：用于数据结构和集合     类基本功能实现  游戏窗口 类：GameWin.java 作用：设置游戏窗口的大小、标题、背景颜色，并初始化游戏状态。 关键方法： launch()：设置窗口属性，添加鼠标和键盘事件监听器，并启动游戏循环。 paint(Graphics...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E5%AD%A6/lisan/" title="离散数学速成"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-30</div><div class="info-item-2">离散数学速成</div></div><div class="info-2"><div class="info-item-1"> 命题逻辑的基本概念  命题 命题：能判断真值的陈述句 真值：真和假（可以用1和0表示） 真命题：真值为真的命题 假命题：真值为假的命题 原子命题：不能再被分解的每题 复合命题：由原子命题通过联结词联结而成的命题  如何判断： ①是否为陈述句 ②是否有唯一真值 命题联结词有五种联结词，分别为否定、合取、析取、蕴涵、等价。  否定：否定的真值与原真值结果相反（相当于数字逻辑中的 “非”） 合取：只有当两个真值都为真时，合取才为真（相当于数字逻辑中的 “与”） 析取：只要有一个真值为真，析取的值就为真（相当于数字逻辑中的 “或”） 蕴涵（需要单独记忆）：当p为真且q为假时，p→q为假(1→0 0)，其他情况都为真。p q的顺序不能颠倒   只要p，就q   因为p，所以q   p仅当q              只有q才p   除非q才p  ...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/huibian/" title="汇编语言指令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-29</div><div class="info-item-2">汇编语言指令</div></div><div class="info-2"><div class="info-item-1">数据传输类 mov指令  格式：mov dst,src mov指令是最常用的数据传送指令，传送对象可以是数据或地址  ①dst、src数据类型需要一致（同为16位或8位） ②dst、src不能同时进行存储器寻址 ③dst不能为数据段寄存器（DS） ④dst为段寄存器时（不为DS），src不能为立即数或段寄存器   xchg指令  格式：xchg opr1,opr2 功能：将操作数opr1和opr2的内容互换  ①数据类型需一致 ②只能在通用寄存器&#x2F;通用寄存器→存储单元之间进行交换 ③不能采用立即寻址   lea指令  格式：lea...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/sql/" title="sql基本语法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-05</div><div class="info-item-2">sql基本语法</div></div><div class="info-2"><div class="info-item-1">关键字不一定使用大写，一般是便于区分内容  数据库操作  创建数据库 1CREATE DATABASE `demo`;   反引号主要是用于防止创建的名称和关键字重复导致报错，如database 创建之后可以用show检查是否已经生成 1SHOW DATABASE;    删除数据库 1DROP DATABASE `demo`;    使用数据库 1USE `demo`;       表格操作  先了解一下有哪些数据类型    int decimal(m,n) varchar(n) blob date timestamp    整数 小数 m代表总共几位数，n代表小数点部分占几位数 字符串 n代表存放多少字节 图片 影像 档案 ‘YYYY-MM-DD’ 日期 ‘YYYY-MM-DD HH:MM:SS’ 记录时间   创建表格 12345CREATE TABLE `student`(	`student_id` INT PRIMARY KEY,	`name` VARCHAR(20),	`major`...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Samdn</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个一晚上速成的小站，比较简陋大家凑合看看就行qaq</div></div><div class="card-widget user-map" id="user-map"><div class="item-headline"><i class="fas fa-heartbeat"></i><span>访客地图</span></div><div class="item-content"><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8"></script></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">类和对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">如何定义类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%BE%97%E5%88%B0%E7%B1%BB%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text">如何得到类的对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.</span> <span class="toc-text">如何使用对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">封装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E5%A4%84"><span class="toc-number">2.1.</span> <span class="toc-text">好处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8private%E5%85%B3%E9%94%AE%E5%AD%97%E5%88%A4%E6%96%AD%E8%BE%93%E5%85%A5%E5%80%BC%E6%98%AF%E5%90%A6%E5%90%88%E7%90%86"><span class="toc-number">2.2.</span> <span class="toc-text">使用private关键字判断输入值是否合理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">3.</span> <span class="toc-text">this关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%B1%E8%BF%91%E5%8E%9F%E5%88%99"><span class="toc-number">3.1.</span> <span class="toc-text">就近原则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">构造方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">特点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="toc-number">4.2.</span> <span class="toc-text">注意事项：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaBean%E7%B1%BB"><span class="toc-number">5.</span> <span class="toc-text">JavaBean类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE"><span class="toc-number">6.</span> <span class="toc-text">对象内存图</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learning2/" title="面向对象">面向对象</a><time datetime="2025-07-21T07:06:09.961Z" title="发表于 2025-07-21 15:06:09">2025-07-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/uncategorized/QA/" title="Ask Anything! (Test)">Ask Anything! (Test)</a><time datetime="2025-07-06T01:38:13.457Z" title="发表于 2025-07-06 09:38:13">2025-07-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/huibian/" title="汇编语言指令">汇编语言指令</a><time datetime="2025-06-29T14:12:41.727Z" title="发表于 2025-06-29 22:12:41">2025-06-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/design_of_java/" title="大鱼吃小鱼——java课程设计小游戏开发">大鱼吃小鱼——java课程设计小游戏开发</a><time datetime="2025-06-20T11:20:20.218Z" title="发表于 2025-06-20 19:20:20">2025-06-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/sql/sql/" title="sql基本语法">sql基本语法</a><time datetime="2025-06-05T00:28:49.909Z" title="发表于 2025-06-05 08:28:49">2025-06-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309235030.png);"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Samdn</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: '0WhQ8k0Y4jiLLX5VxgVQj7p8-MdYXbMMI',
+      appKey: 'pZDjylYhUc1rb5B1DxF1yrhm',
+      avatar: 'monsterid',
+      serverURLs: 'https://samdn.megumi-sea.love',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script defer src="/live2d-widget/dist/autoload.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
