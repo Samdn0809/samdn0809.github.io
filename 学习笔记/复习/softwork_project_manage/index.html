@@ -1,0 +1,544 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>软件项目管理复习 | ꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</title><meta name="author" content="Samdn"><meta name="copyright" content="Samdn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="项目管理概述   项目    定义：为了创造一个唯一的产品或提供一个唯一的服务而进行的临时性的努力。 特征： 1）有明确目标 2）项目之间的活动具有相关性 3）限定周期 4）独特性（不是每天都有） 5）资源成本的约束性 6）项目的不确定性 项目集与项目：  包含关系如上 软件项目的特殊性： 逻辑实体、相互作用的系统、渐进明细、变更   项目管理   定义：项目管理是一系列的伴随着项目的进行而进行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件项目管理复习">
+<meta property="og:url" content="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/softwork_project_manage/index.html">
+<meta property="og:site_name" content="꒰ঌ(🎀ᗜ&#96; v ´ᗜ 🌸)໒꒱💈">
+<meta property="og:description" content="项目管理概述   项目    定义：为了创造一个唯一的产品或提供一个唯一的服务而进行的临时性的努力。 特征： 1）有明确目标 2）项目之间的活动具有相关性 3）限定周期 4）独特性（不是每天都有） 5）资源成本的约束性 6）项目的不确定性 项目集与项目：  包含关系如上 软件项目的特殊性： 逻辑实体、相互作用的系统、渐进明细、变更   项目管理   定义：项目管理是一系列的伴随着项目的进行而进行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg">
+<meta property="article:published_time" content="2025-12-15T04:54:13.276Z">
+<meta property="article:modified_time" content="2025-12-15T04:55:40.204Z">
+<meta property="article:author" content="Samdn">
+<meta property="article:tag" content="个人笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "软件项目管理复习",
+  "url": "http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/softwork_project_manage/",
+  "image": "https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg",
+  "datePublished": "2025-12-15T04:54:13.276Z",
+  "dateModified": "2025-12-15T04:55:40.204Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Samdn",
+      "url": "http://megumi-sea.love/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/softwork_project_manage/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '软件项目管理复习',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309234932.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</span></a><a class="nav-page-title" href="/"><span class="site-name">软件项目管理复习</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">软件项目管理复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-12-15T04:54:13.276Z" title="发表于 2025-12-15 12:54:13">2025-12-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-12-15T04:55:40.204Z" title="更新于 2025-12-15 12:55:40">2025-12-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/">复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><ol>
+<li>项目管理概述</li>
+</ol>
+<ul>
+<li>项目</li>
+</ul>
+<blockquote>
+<p> 定义：为了创造一个唯一的产品或提供一个唯一的服务而进行的临时性的努力。</p>
+<p>特征：</p>
+<p>1）有明确目标</p>
+<p>2）项目之间的活动具有相关性</p>
+<p>3）<strong>限定周期</strong></p>
+<p>4）<strong>独特性</strong>（不是每天都有）</p>
+<p>5）资源成本的约束性</p>
+<p>6）项目的不确定性</p>
+<p>项目集与项目：</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205152448201.png" alt="项目集-项目包含关系"></p>
+<p>包含关系如上</p>
+<p>软件项目的特殊性：</p>
+<p>逻辑实体、相互作用的系统、渐进明细、变更</p>
+</blockquote>
+<ul>
+<li>项目管理</li>
+</ul>
+<blockquote>
+<p>定义：项目管理是一系列的伴随着项目的进行而进行的，目的是为了确保项目能够达到期望结构的一系列管理行为。</p>
+<p>项目管理五大过程组：</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205162402086.png" alt="image-20251205162402086"></p>
+</blockquote>
+<ul>
+<li>软件项目管理</li>
+</ul>
+<blockquote>
+<p>软件工程的组成成分</p>
+<p>确保软件项目满足预算、成本等约束，提交高质量软件产品</p>
+</blockquote>
+<ul>
+<li>敏捷模型</li>
+</ul>
+<blockquote>
+<p>敏捷组织提出的一个灵活开发方法，应对迅速变化需求的快速软件开发方法，是一致迭代、循序渐进的开发方法</p>
+<p>敏捷宣言4价值：</p>
+<p><strong>个体和互动</strong> 高于 流程和工具</p>
+<p><strong>可工作的软件</strong> 高于 详尽的文档</p>
+<p><strong>客户合作</strong> 高于 合同谈判</p>
+<p><strong>响应变化</strong> 高于 遵循计划</p>
+</blockquote>
+<ul>
+<li>软件项目管理过程</li>
+</ul>
+<blockquote>
+<p>项目<strong>初始</strong> → 项目<strong>计划</strong> → 项目<strong>执行控制</strong> → 项目<strong>结束</strong></p>
+<p>项目初始：项目确立 → 生存期</p>
+<p>项目计划：范围计划 → 成本计划 → 进度计划 → 配置管理计划 → 团队计划 → 风险计划 → 合同计划</p>
+<p>项目执行控制：集成计划执行控制 → 核心计划执行控制 → 辅助计划执行控制</p>
+</blockquote>
+<ol start="2">
+<li>软件项目确立</li>
+</ol>
+<ul>
+<li>项目立项</li>
+</ul>
+<blockquote>
+<p>明确项目<strong>目标</strong>、<strong>时间</strong>表、项目使用的资源和<strong>经费</strong>，而且得到执行该项目的项目经理和项目<u>发起人的认可</u></p>
+</blockquote>
+<p>我靠怎么这么多又臭又长先跳了应该不考</p>
+<ol start="3">
+<li>软件生存期模型</li>
+</ol>
+<ul>
+<li>生存期模型分类</li>
+</ul>
+<blockquote>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205204037147.png" alt="image-20251205204037147"></p>
+<p>预测型：提前进行大量的计划工作，如何一次性执行；执行是一个连续的过程</p>
+<p>迭代型：允许对未完成的工作进行反馈，从而改进和修改该工作</p>
+<p>增量型：向客户提供各个已完成的，可能立即使用的可交付成果</p>
+<p>敏捷型：既有迭代也有增量，便于完善工作，频繁交付</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205204410925.png" alt="image-20251205204410925"></p>
+</blockquote>
+<ul>
+<li>预测模型</li>
+</ul>
+<blockquote>
+<p>瀑布模型</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205204504638.png" alt="image-20251205204504638"></p>
+<p>适合的项目特征：需求、方案明确，类似项目：短期项目等</p>
+<hr>
+<p>V模型</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205204636874.png" alt="image-20251205204636874"></p>
+<p>适合的项目特征：</p>
+<p>需求、方案<u>明确</u>，类似项目：系统性能、安全等有严格要求等</p>
+</blockquote>
+<ul>
+<li>迭代模型</li>
+</ul>
+<blockquote>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205204943716.png" alt="image-20251205204943716"></p>
+<p>原型模型</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205205125957.png" alt="image-20251205205125957"></p>
+<p>适合的项目特征：</p>
+<p>需求<u><strong>不明确</strong></u>，项目<u><strong>复杂度高</strong></u>，项目变更频繁</p>
+</blockquote>
+<ul>
+<li>增量模型</li>
+</ul>
+<blockquote>
+<p>增量模型就是一个增量一个增量的开发过程，每个增量是一个交付结果</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205205559233.png" alt="image-20251205205559233"></p>
+<p>优点：</p>
+<p>阶段式提交一个可运行的产品</p>
+<p>关键的功能更早出现</p>
+<p>早期预警问题，避免缺陷蔓延</p>
+<p>阶段性完成可以降低估计失误</p>
+</blockquote>
+<ul>
+<li>敏捷方法</li>
+</ul>
+<blockquote>
+<p>敏捷方法是一个囊括了各种框架和方法答涵盖性术语</p>
+<p>Scrum模型：敏捷模型的代表</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205211129444.png" alt="image-20251205211129444"></p>
+</blockquote>
+<ul>
+<li>混合模型</li>
+</ul>
+<blockquote>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251205211228453.png" alt="image-20251205211228453"></p>
+</blockquote>
+<ol start="4">
+<li>软件项目需求管理</li>
+</ol>
+<ul>
+<li>过程</li>
+</ul>
+<blockquote>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211130635049.png" alt="image-20251211130635049"></p>
+<p><strong>需求获取</strong>：面对面沟通是最有效的方式</p>
+<p><strong>需求分析</strong>：需求分析是为最终用户所看到的系统建立一个概念模型，是对需求的抽象描述</p>
+<p><strong>需求规格编写</strong>：需求分析工作完成的一个基本标志是形成了一份完整的、规范的需求规格说明书</p>
+<p><strong>需求验证</strong>：验证需求是否正确&#x2F;一致&#x2F;完全&#x2F;实际可行&#x2F;必要&#x2F;可检验&#x2F;可跟踪？</p>
+</blockquote>
+<ol start="5">
+<li>软件项目任务分解</li>
+</ol>
+<blockquote>
+<p>任务分解过程：将一个项目分解为更多的工作细目或者子项目，使项目变的更小、更易管理、更易操作</p>
+<p>结果：WBS(Work Breakdown Structure：任务分解结构)</p>
+</blockquote>
+<ul>
+<li>分解方法</li>
+</ul>
+<blockquote>
+<p>类比：采用类似项目的WBS作为参考，一些企业保存一些项目的WBS库和一些项目文档作为其他项目的开发提供参照。</p>
+<p>模板参照：</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211154101401.png" alt="image-20251211154101401"></p>
+<p>自上而下：</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211154310149.png" alt="image-20251211154310149"></p>
+<p>自下而上：</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211154328869.png" alt="image-20251211154328869"></p>
+</blockquote>
+<ol start="6">
+<li>成本计划</li>
+</ol>
+<p>软件项目成本：<u>完成软件规模相应付出的代价</u>，<u>待开发软件项目需要的资金</u>，<u>人的劳动的消耗所需要的代价</u>（软件产品的主要成本），<u>货币单位</u></p>
+<ul>
+<li>传统估算方法</li>
+</ul>
+<blockquote>
+<p><strong>代码行估算法</strong></p>
+<p><strong>功能点估算法</strong>：</p>
+<p>​	FP &#x3D; UFC * TCF （UFC：未调整功能点计数 TCF：技术复杂度因子）</p>
+<p>​	TCF &#x3D; 0.65 + 0.01 × (∑Fi)</p>
+<p><strong>用例点估算法</strong>：</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211162655000.png" alt="image-20251211162655000"></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211162828646.png" alt="image-20251211162828646"><br>$$<br>UUCP&#x3D;UAW+UUCW<br>$$<br><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211164853818.png" alt="image-20251211164853818"></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211165207322.png" alt="image-20251211165207322"><br>$$<br>UCP&#x3D;UUCP<em>TCF</em>ECF<br>$$</p>
+<p>$$<br>计算工作量：Effort&#x3D;UCP*PE（PE应该题目会给）<br>$$</p>
+<p>​	例：</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211163529696.png" alt="image-20251211163529696"></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211165310469.png" alt="image-20251211165310469"></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251211165332499.png" alt="image-20251211165332499"></p>
+<p><strong>类比（自顶向下）估算法</strong>：</p>
+<p>​	有类似历史项目数据、信心不足、要求不是非常精确估算时采用</p>
+<p><strong>自下而上估算法</strong>：</p>
+<p>​	利用任务分解图（WBS），对各个具体工作包进行详细的成本估算，然后将结果累加起来得出项目总成本</p>
+<ul>
+<li>优点——相对比较准确，准确度来源于每个任务的估算情况</li>
+<li>缺点——花费时间</li>
+</ul>
+<p><strong>三点估算法</strong>：</p>
+<p>​	基于三种估算值计算预期成本：</p>
+<ul>
+<li>最可能成本（Cm）：比较显示的估算成本</li>
+<li>最乐观成本（Co）：最好情况所得到的估算成本</li>
+<li>最悲观成本（Cp）：最差情况所得到的估算成本</li>
+</ul>
+<p>$$<br>三角分布：C_E&#x3D;(C_O+C_M+C_P)&#x2F;3<br>$$</p>
+<p>$$<br>贝塔分布：C_E&#x3D;(C_O+4C_M+C_P)&#x2F;6<br>$$</p>
+<p><strong>参数估算法</strong>：</p>
+<p>​	通过项目数据，进行回归分析，得出回归模型，通过参数模型估算（规模）成本的方法</p>
+<p><strong>专家估算法</strong>：</p>
+<p>​	多位专家进行成本估算，一个专家可能会有偏见，最好由多位专家进行估算，取得多个估算值，最后得出综合的估算值</p>
+</blockquote>
+<ol start="7">
+<li>进度计划</li>
+</ol>
+<blockquote>
+<p> 定义：确定为完成项目的各个交付成果所必须进行的诸项具体活动</p>
+<p>任务关系：项目各项活动之间存在一定的关联关系，根据这些关系安排任务之间的顺序</p>
+<ul>
+<li><strong>关系依赖矩阵：如果<u>di是dj的前置</u>，则dij&#x3D;1，否则dij&#x3D;0（i行j列）</strong></li>
+</ul>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251214163016763.png" alt="image-20251214163016763"></p>
+<p>举例：</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251214163313844.png" alt="image-20251214163313844"></p>
+<p>t1是t2、t3的前置，所以d12、d13&#x3D;1，即红框内部分，后面同理</p>
+<ul>
+<li><p><strong>网络图</strong>：网络图是活动排序的一个输出，展示项目中各个活动以及活动之间的逻辑关系。有PDM（优先图法，节点法网络图）和ADM（箭线法）两种网络图</p>
+<p><strong>（1）PDM网络图（单代号</strong></p>
+</li>
+</ul>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251214163916570.png" alt="image-20251214163916570"></p>
+<p>​	基本特点是节点，用<strong>节点</strong>表示<strong>活动</strong>，箭头表示各活动之间的逻辑关系</p>
+<p>​	<strong>（2）ADM网络图（双代号</strong></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251214164719485.png" alt="image-20251214164719485"></p>
+<p>也称为双代号项目网络图，<strong>箭头</strong>表示<strong>活动</strong>，两个代号唯一确定一个任务代号表示前一任务的结束，同时表示后一任务的开始</p>
+<p>历时估算：估计任务、路径、项目的持续时间</p>
+<ul>
+<li>定额估算法：T&#x3D;Q&#x2F;(R*S) （T：活动历时 Q：任务工作量 R：人力数量 S：工作效率</li>
+<li>经验导出模型：</li>
+</ul>
+<p>$$<br>D&#x3D;a*E^b<br>$$</p>
+<p>D：进度（以月单位） E：工作量（以人月单位） a：2——4之间 b：1&#x2F;3左右（依赖于项目的自然属性）</p>
+<ul>
+<li>关键路径法估计CPM</li>
+</ul>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251214172855737.png" alt="image-20251214172855737"></p>
+<p>关键路径是网络图中最长的路径，即图中的A为关键路径，确定项目完成时间最短为100</p>
+<ul>
+<li>工程评估评审交换技术（PERT）</li>
+</ul>
+<p>加权平均得到期望值<strong>E&#x3D; （O+m+P）&#x2F;6</strong></p>
+<p>风险指标</p>
+<p>标准差δ &#x3D;(最大估算值-最小估算值)&#x2F;6</p>
+<p>方差δ &#x3D; [(最大估算值-最小估算值)&#x2F;6]^2</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251214173757158.png" alt="image-20251214173757158"></p>
+<ul>
+<li><p>预留分析：</p>
+<p>应急预留：包含在进度基准中的一段储备时间，用来应对已经接受的已识别发现，以应对进度方面的不确定性</p>
+<p>管理预留：是为管理控制的目的而特别流出的项目预算，用来应对项目范围中不可预见的风险</p>
+</li>
+</ul>
+<p>项目进度编排：</p>
+<ul>
+<li>超前与滞后</li>
+</ul>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251214190613707.png" alt="image-20251214190613707"></p>
+<ul>
+<li><strong>关键路径法</strong>⭐</li>
+</ul>
+<p>（1）最早&#x2F;晚开始时间（看书</p>
+<p>（2）最早&#x2F;晚结束时间（看书</p>
+<p>（3）总浮动</p>
+<p>​		浮动时间是一个任务的机动性，它是一个任务在不影响其他任务或项目完成的情况下可延迟的时间量</p>
+<p>​		总浮动：在不影响项目最早完成时间的前提下，一个任务可以延迟的时间</p>
+<p>（4）自由浮动</p>
+<p>​		在不影响后置任务最早开始时间的前提下，一个任务可以延迟的时间</p>
+<p>​	<strong>关键路径</strong>：网络图中最长的路径，决定了项目完成的最短时间。他的时间浮动为0，没有任何活动延迟。关键路径可能不止一条</p>
+<p><strong>公式：</strong></p>
+<p>正向推导：EF&#x3D;ES+duration 后置任务：ES(s)&#x3D;EF+Lag</p>
+<p>逆向推导：LS&#x3D;LF-duration  前置任务：LF(p)&#x3D;LS-Lag</p>
+<p>总浮动：TF&#x3D;LS-ES&#x3D;LF-EF  	自由浮动：FF&#x3D;ES(s)-EF-Lag</p>
+<ul>
+<li><p>时间压缩法</p>
+<p>不改变项目范围的前提下缩短项目工期的方法</p>
+<p>进度压缩单位成本&#x3D;（压缩成本-正常成本）&#x2F;（正常进度-压缩进度）</p>
+<p>进度压缩因子&#x3D;压缩进度&#x2F;正常进度</p>
+<p>压缩进度的工作量&#x3D;正常工作量&#x2F;进度压缩因子</p>
+</li>
+<li><p>资源优化</p>
+</li>
+<li><p>敏捷计划</p>
+</li>
+</ul>
+<p>项目进度确定</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251214194839476.png" alt="image-20251214194839476"></p>
+</blockquote>
+<ol start="8">
+<li>质量计划</li>
+</ol>
+<p>质量：满足要求的程度,包括符合规定 的要求和满足顾客隐含需求.</p>
+<p>软件质量是软件满足明确说明或隐含需求的程度</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251214195106328.png" alt="image-20251214195106328"></p>
+<p>审计(Audit)是对过程或者产品的一次独立评估。 将审核的主体与为该主体以前建立的一组规程和 标准进行比较</p>
+<ol start="9">
+<li>配置管理计划</li>
+</ol>
+<blockquote>
+<p>定义：记录软件产品的演化过程 得到精确的产品配置。最终保证软件产品的完整性、一致性、追朔性、可控性</p>
+<p>基线定义：</p>
+<p>​	基线<u>提供</u>了软件生存期中各个开发阶段的一个<u>特定点</u>, 标志<u>开发过程一个阶段的结束</u>,或者里程碑<br>​	一个(些)配置项形成并通过审核，即形成基线<br>​	基线修改需要按照正式的程序执行</p>
+</blockquote>
+<ol start="10">
+<li>先跳了看不明白</li>
+<li>风险计划</li>
+</ol>
+<blockquote>
+<p>定义：</p>
+<p>​	风险是对潜在的、未来可能发生<u>损害</u>的一种<u>度量</u>， 如果风险确实发生了，则会对项目产生有害的或者 负面的影响。</p>
+<p>​	软件风险对软件开发过程及软件产品本身可能造成 的伤害或损失。</p>
+<p>四个过程：</p>
+<ul>
+<li>风险识别：</li>
+<li>风险评估：对概率、影响进行评估</li>
+<li>风险规划：制定行动、策略减小影响</li>
+<li>风险控制：</li>
+</ul>
+<p>决策树：</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251215100934339.png" alt="image-20251215100934339"></p>
+<p>EMV&#x3D;P*outcome</p>
+</blockquote>
+<ol start="12">
+<li>合同计划</li>
+</ol>
+<blockquote>
+<p>类型：</p>
+<p>成本补偿合同：成本+利润，适用于会发生重大变更的</p>
+<p>总价合同：确定的总价，适用于明确定义需求且不会有重大变更的情况</p>
+<p>工料合同：以上两种合同的混合型，必须为每个单位的工作量付出一定报酬</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://megumi-sea.love">Samdn</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/softwork_project_manage/">http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/softwork_project_manage/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://megumi-sea.love" target="_blank">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a></div><div class="post-share"><div class="social-share" data-image="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/software_engineering/" title="软件工程期末"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">软件工程期末</div></div><div class="info-2"><div class="info-item-1"> 软件生命周期有哪些阶段组成？（1.3）p问题定义： 可行性研究： 需求分析：  可行性研究过程（2.2）p36 复查系统规模和目标 研究目前正在使用的系统 导出新系统的高层逻辑模型 进一步定义问题 导出和评价供选择的解法 推荐行动方针 草拟开发计划 书写文档提交审查   ⭐**数据字典（2.5）**p47数据流图、数据字典的画法_数据字典怎么画-CSDN博客 常见符号    符号 含义 举例    + 和 a+b   &#x3D; 赋值 c&#x3D;a+b   [] 可选 [a|b]：选a或b   {}   m{……}n 重复取括号内长度为m-n的内容 1{数字}3：取1到3位数字3{数字}3：取3位数字   () 可选    例：某高校可用的电话号码有以下几类：校内电话号码由4位数字组成，第一位数字不是0。校外电话又分为本市电话和外地电话两类。拨校外电话需要先拨0，若是本市电话则接着拨8位数字(第一位不是0) ，若是外地电话则拨区码(3-5位)后再拨8位电话号码(第一位不是0) 。  电话号码 &#x3D; [ 校内电话 | 校外电话 ]校内电话 &#x3D; 非零数字...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/design_of_java/" title="大鱼吃小鱼——java课程设计小游戏开发"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-20</div><div class="info-item-2">大鱼吃小鱼——java课程设计小游戏开发</div></div><div class="info-2"><div class="info-item-1"> 游戏概述  本游戏是一个基于 Java 的二维游戏，玩家控制一条鱼在海洋环境中生存，通过吃掉敌方小鱼来获得分数并提升等级。游戏包含了多个关卡和敌人类型，具有简单的碰撞检测和游戏状态管理。 (因为手头上找不到合适的游戏素材，所以都是拿现有的东西拼凑的，内容可替换)  开发环境   开发工具：Vscode 编程语言：Java 主要库： javax.swing：用于创建图形用户界面 java.awt：用于绘图和图形处理 java.util：用于数据结构和集合     类基本功能实现  游戏窗口 类：GameWin.java 作用：设置游戏窗口的大小、标题、背景颜色，并初始化游戏状态。 关键方法： launch()：设置窗口属性，添加鼠标和键盘事件监听器，并启动游戏循环。 paint(Graphics...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/huibian/" title="汇编语言指令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-29</div><div class="info-item-2">汇编语言指令</div></div><div class="info-2"><div class="info-item-1">数据传输类 mov指令  格式：mov dst,src mov指令是最常用的数据传送指令，传送对象可以是数据或地址  ①dst、src数据类型需要一致（同为16位或8位） ②dst、src不能同时进行存储器寻址 ③dst不能为数据段寄存器（DS） ④dst为段寄存器时（不为DS），src不能为立即数或段寄存器   xchg指令  格式：xchg opr1,opr2 功能：将操作数opr1和opr2的内容互换  ①数据类型需一致 ②只能在通用寄存器&#x2F;通用寄存器→存储单元之间进行交换 ③不能采用立即寻址   lea指令  格式：lea...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learning2/" title="面向对象"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-21</div><div class="info-item-2">面向对象</div></div><div class="info-2"><div class="info-item-1"> 类和对象  ​	类：对象共同特征的描述 ​	对象：真实存在的具体东西 在java中，必须先设计类，才能获取对象。  如何定义类  1234567public class 类名&#123;	1.成员变量（代表属性，一般是名词，如手机的价格、品牌）	2.成员方法（行为，一般为动词，如手机可以玩游戏）	3.构造器（后面学习）	4.代码块（同上）	5.内部类（同上）&#125;     如何得到类的对象  类名 对象名 &#x3D; new 类名(); 1Phone p = new...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learnng/" title="Java基本语法入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-03</div><div class="info-item-2">Java基本语法入门</div></div><div class="info-2"><div class="info-item-1">​    这是一份个人向的笔记，供个人复习参考用，也适合有一定程序语言基础的初学者入门。希望看完能够对你会有所帮助^ ^（可以配合网课食用）  第一个程序：  123456789//class是一个类，helloworld是类名，类名尽量跟文件名保持一致public class helloworld&#123;	    //main:主方法（程序的入口）    public static void main(String[] args) &#123;        //输出双引号中的语句        System.out.println(&quot;Hello, World!&quot;);	    &#125;&#125;     tips：编写Java时应该注意以下内容  大小写敏感：如标识符Hello和hello是不一样的  类名：对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 MyFirstJavaClass  主方法入口：所有的 Java 程序由 public static void main(String[]...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c/lanqiao_learning/" title="蓝桥杯备赛用（2025）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-12</div><div class="info-item-2">蓝桥杯备赛用（2025）</div></div><div class="info-2"><div class="info-item-1">  输入带空格的字符串应该用fgets，scanf遇到空格时会停止读取，后续内容被截断 fgets用法如下：   1fgets(input, sizeof(input), stdin);   快速排序  ​	需要自己先定义一个函数compare（函数名可不为compare） 12345int compare(const void *a, const void *b) &#123;	int num1 = *(int*)a; 	int num2 = *(int*)b; 	return num2 - num1; // 返回正数时，num1 排在 num2 后面（实现降序）&#125;  ​	使用时如下： 1qsort( arr , n , sizeof ( int ) , compare );	//arr是数组名，n为数组的长度， compare为上面需要自己定义的函数  ​	二编：好麻烦不想用qsort了，otto教了一个c++的sort写法： 123456789101112131415161718192021222324252627#include...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/lisan/" title="离散数学速成"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-30</div><div class="info-item-2">离散数学速成</div></div><div class="info-2"><div class="info-item-1"> 命题逻辑的基本概念  命题 命题：能判断真值的陈述句 真值：真和假（可以用1和0表示） 真命题：真值为真的命题 假命题：真值为假的命题 原子命题：不能再被分解的每题 复合命题：由原子命题通过联结词联结而成的命题  如何判断： ①是否为陈述句 ②是否有唯一真值 命题联结词有五种联结词，分别为否定、合取、析取、蕴涵、等价。  否定：否定的真值与原真值结果相反（相当于数字逻辑中的 “非”） 合取：只有当两个真值都为真时，合取才为真（相当于数字逻辑中的 “与”） 析取：只要有一个真值为真，析取的值就为真（相当于数字逻辑中的 “或”） 蕴涵（需要单独记忆）：当p为真且q为假时，p→q为假(1→0 0)，其他情况都为真。p q的顺序不能颠倒   只要p，就q   因为p，所以q   p仅当q              只有q才p   除非q才p  ...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Samdn</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个一晚上速成的小站，比较简陋大家凑合看看就行qaq</div></div><div class="card-widget user-map" id="user-map"><div class="item-headline"><i class="fas fa-heartbeat"></i><span>访客地图</span></div><div class="item-content"><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8"></script></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/softwork_project_manage/" title="软件项目管理复习">软件项目管理复习</a><time datetime="2025-12-15T04:54:13.276Z" title="发表于 2025-12-15 12:54:13">2025-12-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/software_engineering/" title="软件工程期末">软件工程期末</a><time datetime="2025-11-30T09:44:17.717Z" title="发表于 2025-11-30 17:44:17">2025-11-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/other/Firlight/" title="基础测试题最终版">基础测试题最终版</a><time datetime="2025-09-23T16:26:49.692Z" title="发表于 2025-09-24 00:26:49">2025-09-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learning2/" title="面向对象">面向对象</a><time datetime="2025-07-21T07:06:09.961Z" title="发表于 2025-07-21 15:06:09">2025-07-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/uncategorized/QA/" title="Ask Anything! (Test)">Ask Anything! (Test)</a><time datetime="2025-07-06T01:38:13.457Z" title="发表于 2025-07-06 09:38:13">2025-07-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309235030.png);"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Samdn</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: '0WhQ8k0Y4jiLLX5VxgVQj7p8-MdYXbMMI',
+      appKey: 'pZDjylYhUc1rb5B1DxF1yrhm',
+      avatar: 'monsterid',
+      serverURLs: 'https://samdn.megumi-sea.love',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script defer src="/live2d-widget/dist/autoload.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
