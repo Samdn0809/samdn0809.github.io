@@ -1,0 +1,588 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>人工智能导论期末 | ꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</title><meta name="author" content="Samdn"><meta name="copyright" content="Samdn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="绪论  人工智能：用人工方法在机器上实现的智能或使机器具有类似于人的智能 分类： （1）模拟人的智能：感知智能（视听触觉）、认知智能（语言理解知识推理）、创造智能（灵感顿悟） （2）不同层次：弱人工智能、通用人工智能、超级人工智能 人工智能涉及多个学科，其研究内容包括知识表示、知识推理、知识应用、机器学习、机器感知、机器思维和机器行为等  知识表示  知识：人类对自然世界、人类社会、思维方式及运">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人工智能导论期末">
+<meta property="og:url" content="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/Introduction%20to%20Artificial%20Intelligence/index.html">
+<meta property="og:site_name" content="꒰ঌ(🎀ᗜ&#96; v ´ᗜ 🌸)໒꒱💈">
+<meta property="og:description" content="绪论  人工智能：用人工方法在机器上实现的智能或使机器具有类似于人的智能 分类： （1）模拟人的智能：感知智能（视听触觉）、认知智能（语言理解知识推理）、创造智能（灵感顿悟） （2）不同层次：弱人工智能、通用人工智能、超级人工智能 人工智能涉及多个学科，其研究内容包括知识表示、知识推理、知识应用、机器学习、机器感知、机器思维和机器行为等  知识表示  知识：人类对自然世界、人类社会、思维方式及运">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg">
+<meta property="article:published_time" content="2025-12-23T08:25:03.650Z">
+<meta property="article:modified_time" content="2025-12-23T08:26:46.477Z">
+<meta property="article:author" content="Samdn">
+<meta property="article:tag" content="个人笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "人工智能导论期末",
+  "url": "http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/Introduction%20to%20Artificial%20Intelligence/",
+  "image": "https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg",
+  "datePublished": "2025-12-23T08:25:03.650Z",
+  "dateModified": "2025-12-23T08:26:46.477Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Samdn",
+      "url": "http://megumi-sea.love/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/Introduction%20to%20Artificial%20Intelligence/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '人工智能导论期末',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309234932.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</span></a><a class="nav-page-title" href="/"><span class="site-name">人工智能导论期末</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">人工智能导论期末</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-12-23T08:25:03.650Z" title="发表于 2025-12-23 16:25:03">2025-12-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-12-23T08:26:46.477Z" title="更新于 2025-12-23 16:26:46">2025-12-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/">复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><ol>
+<li><h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1></li>
+</ol>
+<p>人工智能：用人工方法在机器上实现的智能或使机器具有类似于人的智能</p>
+<p>分类：</p>
+<p>（1）模拟人的智能：感知智能（视听触觉）、认知智能（语言理解知识推理）、创造智能（灵感顿悟）</p>
+<p>（2）不同层次：弱人工智能、通用人工智能、超级人工智能</p>
+<p>人工智能涉及多个学科，其研究内容包括<u>知识表示、知识推理、知识应用、机器学习、机器感知、机器思维和机器行为</u>等</p>
+<ol start="2">
+<li><h1 id="知识表示"><a href="#知识表示" class="headerlink" title="知识表示"></a>知识表示</h1></li>
+</ol>
+<p>知识：人类对自然世界、人类社会、思维方式及运动规律的认识与掌握；是人类在长期的生活及社会实践中、在科学研究及实验中积累起来的经验；是人的大脑通过思维重新组合，把实践中获得的有关信息关联在一起形成的信息结构 </p>
+<p>在人工智能中将前一种知识称为事实，而把采用“如果……则……”关联起来所形成的知识称为<strong>规则</strong>  即<u><strong>知识&#x3D;事实+规则+概念</strong></u></p>
+<p>特性：</p>
+<p>（1）相对正确性：在一定条件和环境下，知识一般是正确的。其中”一定的条件和环境“是保证知识正确性必不可少的前提</p>
+<p>（2）不确定性：在真和假之间还存在其他中间状态</p>
+<ul>
+<li><u>随机性</u>引起的不确定性</li>
+<li><u>模糊性</u>引起的不确定性</li>
+<li><u>不完全性</u>引起的不确定性</li>
+<li><u>经验依赖</u>引起的不确定性</li>
+</ul>
+<p>（3）可表示性：知识可以用适当的形式表示出来（语言、文字、图像、符号、神经网络等）</p>
+<p>（4）可利用性：知识的可利用性是指知识可被利用</p>
+<p>知识表示：将人类知识形式化或模型化。知识表示过程就是把知识编码成某种数据结构</p>
+<p>知识表示&#x3D;数据结构+处理机制</p>
+<h2 id="一阶谓词逻辑表示法"><a href="#一阶谓词逻辑表示法" class="headerlink" title="一阶谓词逻辑表示法"></a>一阶谓词逻辑表示法</h2><p>涉及的逻辑分为经典命题逻辑和一阶谓词逻辑，统称为经典逻辑</p>
+<h3 id="命题逻辑"><a href="#命题逻辑" class="headerlink" title="命题逻辑"></a>命题逻辑</h3><p><strong>命题</strong>是一个非真即假的陈述句。判断是否为命题：①陈述句 ②有唯一真值</p>
+<h3 id="谓词逻辑"><a href="#谓词逻辑" class="headerlink" title="谓词逻辑"></a>谓词逻辑</h3><p><strong>谓词逻辑</strong>是基于命题中谓词分析的一种逻辑。<strong>一阶谓词逻辑</strong>是最直观的一种。</p>
+<p>谓词就是用于刻画个体的性质、状态和个体之间关系的语言成分。</p>
+<p>一般形式：P(x1,x2,…,xn)   P为谓词名，x1、x2为个体</p>
+<p>谓词中包含的个体数目称为谓词的<strong>元数</strong>。有几个个体就是几元谓词</p>
+<h3 id="谓词公式"><a href="#谓词公式" class="headerlink" title="谓词公式"></a>谓词公式</h3><p>也称为合式公式，是由谓词符号、常量符号、变元符号、函数符号，以及连接词、量词、括号、逗号等按照一定语法规则组成的字符串表达式。</p>
+<p>连接词</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251219141008644.png" alt="image-20251219141008644"></p>
+<p>量词</p>
+<p>（1）全称量词：∀A——对个体域中<strong>所有</strong>个体x&#x2F;<strong>任意</strong>一个个体x</p>
+<p>​		”所有学生看书“  (∀A)(student(x) → Have(x,Book))</p>
+<p>（2）存在量词：∃x——在个体域中<strong>存在</strong>个体x</p>
+<p>​		”某个学生在踢球“  (∃x)(student(x) → Plays(x,Football))</p>
+<p>位于量词后的单个谓词公式称为量词的辖域。辖域内与量词中同名的变元称为<strong>约束变元</strong>，不受约束的变元称为<strong>自由变元</strong>。</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251219154307715.png" alt="image-20251219154307715"></p>
+<p>性质：谓词公式在不同个体域中具有不同性质</p>
+<p>（1）永真性&#x2F;永假性</p>
+<p>谓词公式P<u>对个体域D</u>上任何一个解释都取<strong>T&#x2F;F</strong>，则称<u>P在D</u>上<strong>永真&#x2F;假</strong></p>
+<p>P在每个非空个体域上永真&#x2F;假，则P永真&#x2F;假</p>
+<p>（2）可满足性和不可满足性</p>
+<p>至少存在一个解释使P在此解释下真值为T，则称公式P可满足，否则P不可满足。</p>
+<p>（3）等价性</p>
+<p>对共同个体域D上任何解释，P、Q都有相同真值，则称他们在D上等价。</p>
+<p>如果D是任意个体域，则称P和Q等价</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251219163826975.png" alt="image-20251219163826975"></p>
+<p>（4）永真蕴含</p>
+<p> 对于P、Q，如果P→Q永真，则称公式P永真蕴含Q，记作P ⇒ Q，且称Q为P的逻辑结论，P为Q的前提。</p>
+<p><strong>用一阶谓词逻辑表示知识</strong></p>
+<p>步骤：</p>
+<p>（1）<strong>定义</strong>谓词、个体</p>
+<p>（2）为个体变元<strong>赋值</strong></p>
+<p>（3）用连接符号<strong>连接</strong>谓词</p>
+<h2 id="状态空间表示法"><a href="#状态空间表示法" class="headerlink" title="状态空间表示法"></a>状态空间表示法</h2><p>集合类型：所有可能的状态集合s、操作符集合O、包含问题的初始状态集合s0（是s的非空子集）、目标状态集合</p>
+<p>从s0到目标状态集合的路径称为<strong>求解路径</strong>。求解路径上的操作符序列是状态空间的一个解。</p>
+<p>步骤：</p>
+<p>（1）定义状态描述形式</p>
+<p>（2）用状态描述形式，把问题的所有可能状态都表示出来</p>
+<p>（3）定义一组操作符，通过操作符使问题从一种状态转换成另一种状态</p>
+<p>（4）绘制状态空间图</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251219175450400.png" alt="image-20251219175450400"></p>
+<h2 id="产生式的基本形式"><a href="#产生式的基本形式" class="headerlink" title="产生式的基本形式"></a>产生式的基本形式</h2><h3 id="确定性事实知识的产生式表示"><a href="#确定性事实知识的产生式表示" class="headerlink" title="确定性事实知识的产生式表示"></a><u>确定性事实</u>知识的产生式表示</h3><p>确定性事实知识一般用三元组表示<u><strong>（对象，属性，值）</strong></u>或（关系，对象1，对象2）</p>
+<table>
+<thead>
+<tr>
+<th>例子</th>
+<th>对象</th>
+<th>属性</th>
+<th>值</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>雪是白色的</td>
+<td>Snow</td>
+<td>Color</td>
+<td>White</td>
+<td>（Snow,Color,White）</td>
+</tr>
+</tbody></table>
+<h3 id="不确定性事实知识的产生式表示"><a href="#不确定性事实知识的产生式表示" class="headerlink" title="不确定性事实知识的产生式表示"></a><u>不确定性事实</u>知识的产生式表示</h3><p>比确定性事实多一个置信度<u><strong>（对象，属性，值，置信度）</strong></u>或（关系，对象1，对象2，置信度）置信度为0~1的值</p>
+<table>
+<thead>
+<tr>
+<th>例子</th>
+<th>对象</th>
+<th>属性</th>
+<th>值</th>
+<th>置信度</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>这只狗的名称不太可能叫小白</td>
+<td>Dog</td>
+<td>Name</td>
+<td>xiaobai</td>
+<td>0.2</td>
+<td>（Dog，Name，xiaobai，0.2）</td>
+</tr>
+</tbody></table>
+<h3 id="确定性规则知识的产生式表示"><a href="#确定性规则知识的产生式表示" class="headerlink" title="确定性规则知识的产生式表示"></a><u>确定性规则</u>知识的产生式表示</h3><p>基本形式：<strong>IF P THEN Q</strong> 或 <strong>P → Q</strong></p>
+<p>​	P是产生式的前提（前项），Q是产生式的结论（后项）</p>
+<p>​	例：IF 一个整数大于3 AND 小于5 THEN 是4</p>
+<h3 id="不确定性规则知识的产生式表示"><a href="#不确定性规则知识的产生式表示" class="headerlink" title="不确定性规则知识的产生式表示"></a><u>不确定性规则</u>知识的产生式表示</h3><p>同理在最后加一个置信度：<strong>IF P THEN Q（置信度）</strong> 或 <strong>P → Q（置信度）</strong></p>
+<h3 id="产生式系统"><a href="#产生式系统" class="headerlink" title="产生式系统"></a>产生式系统</h3><p><strong>产生式系统</strong>是人工智能系统中常见的一种程序结构，是一种知识表示系统。由<strong>规则库、推理机、综合数据库</strong>三部分组成。</p>
+<p>  规则库：初始状态转换成目标状态的各种变化规则</p>
+<p>  推理机：一个&#x2F;一组程序组成，负责整个产生式系统运行</p>
+<p>  综合数据库：存储初始的事实数据、中间结果、最后结果</p>
+<p>步骤：</p>
+<p>（1）<strong>初始化</strong>综合<strong>数据库</strong>，把问题的初始已知事实送入综合数据库</p>
+<p>（2）根据相关领域的知识<strong>建立规则库</strong></p>
+<p>（3）若有未使用的规则，且前提可与综合数据库的事实匹配，跳转（4）；负责跳转（6）.</p>
+<p>（4）执行当前规则并做标记，将结论送进综合数据库，若规则结论部分指出的是某些操作则执行 </p>
+<p>（5）检查综合数据库<strong>是否包含问题的解</strong>，包含则终止过程；否则跳转（3）</p>
+<p>（6）要求用户提供进一步的关于问题的已知事实，提供跳转（3），否则终止</p>
+<p>（7）若规则库中不再有未使用的过程，终止</p>
+<h2 id="语义网络结构"><a href="#语义网络结构" class="headerlink" title="语义网络结构"></a>语义网络结构</h2><p>语义网络由<strong>节点</strong>和节点间的<strong>弧</strong>组成。节点表示各种<strong>事物、概念、情况、属性、状态、事件和动作</strong>等；弧表示它所连接的节点间的<strong>各种语义关系</strong>。</p>
+<p>表示方式：（节点1，弧，节点2）</p>
+<h3 id="基本语义关系"><a href="#基本语义关系" class="headerlink" title="基本语义关系"></a>基本语义关系</h3><ol>
+<li>类属关系</li>
+</ol>
+<p>指具有共同属性的不同事物之间的分类关系</p>
+<blockquote>
+<p>ISA（Is-A）xx是xx的实例</p>
+<p>AMO（A-Member-Of）xx是xx的成员</p>
+<p>AKO（A-Kind-Of）xx是xx的类型</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251221143404004.png" alt="image-20251221143404004"></p>
+<p>（1）鹦鹉是一只鸟 （2）李琦是学生会的成员 （3）鸟是一种动物</p>
+</blockquote>
+<ol start="2">
+<li>包含关系（聚类关系）</li>
+</ol>
+<p>指具有组织或结构特征的部分与整体之间的关系</p>
+<blockquote>
+<p>Part-of——xx是xx的一部分</p>
+</blockquote>
+<ol start="3">
+<li>属性关系</li>
+</ol>
+<p>指事物和属性之间的关系</p>
+<blockquote>
+<p>Have——xx有xx</p>
+<p>Can——xx可以xx</p>
+</blockquote>
+<ol start="4">
+<li>时间关系</li>
+</ol>
+<p>事件先后发生关系，节点间不具备属性继承类</p>
+<blockquote>
+<p>Before&#x2F;After—— xx发生之前&#x2F;之后xx发生</p>
+</blockquote>
+<ol start="5">
+<li>位置关系</li>
+</ol>
+<blockquote>
+<p> Located-at（on&#x2F;under&#x2F;inside&#x2F;outside）——xx位于xx</p>
+</blockquote>
+<ol start="6">
+<li>因果关系</li>
+</ol>
+<blockquote>
+<p>If-then——如果xx则xx</p>
+</blockquote>
+<ol start="7">
+<li>相近关系</li>
+</ol>
+<blockquote>
+<p>Similar-to——xx像xx</p>
+</blockquote>
+<ol start="8">
+<li>组成关系</li>
+</ol>
+<blockquote>
+<p>Compose-of——xx由xxxxxx组成</p>
+</blockquote>
+<h2 id="框架表示法"><a href="#框架表示法" class="headerlink" title="框架表示法"></a>框架表示法</h2><p>框架是一种描述对象属性的数据结构，是由若干节点和关系构成的网络。</p>
+<p>格式：</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251221152416606.png" alt="image-20251221152416606"></p>
+<p>案例</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251221152615276.png" alt="image-20251221152615276"></p>
+<table>
+<thead>
+<tr>
+<th>框架名</th>
+<th>&lt;地震3&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>地点</td>
+<td>下斯洛文尼亚</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>今天</td>
+</tr>
+<tr>
+<td>伤亡数</td>
+<td>25</td>
+</tr>
+<tr>
+<td>财产损失</td>
+<td>5亿美元</td>
+</tr>
+<tr>
+<td>震级</td>
+<td>8.5</td>
+</tr>
+<tr>
+<td>断层</td>
+<td>萨迪壕金斯</td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li><h1 id="确定性推理方法"><a href="#确定性推理方法" class="headerlink" title="确定性推理方法"></a>确定性推理方法</h1></li>
+</ol>
+<h2 id="推理概述"><a href="#推理概述" class="headerlink" title="推理概述"></a>推理概述</h2><p>推理：从已知事实出发，按某种策略，运用已掌握知识，推导出其中蕴含的事实性结论或归纳出某些新结论的过程</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p><strong>按推理逻辑分类</strong></p>
+<blockquote>
+<p>演绎推理：从<strong>一般到个别</strong>（不能增殖新知识）</p>
+<p>​	三段论式：大前提、小前提、结论</p>
+<p>归纳推理：从<strong>个别到一般</strong>（会增殖新知识）</p>
+<p>​	①完全归纳推理：考虑全部对象（如质检每台计算机质量合格）</p>
+<p>​	②不完全归纳推理：只考虑相应事物的部分对象（如随机抽样几台计算机检测质量合格）</p>
+<p>默认推理（缺省推理）：完全不知道情况，假设某条件具备进行推理</p>
+</blockquote>
+<p><strong>按所用知识确定性分类</strong></p>
+<blockquote>
+<p>确定性推理：所用知识确定，结论确定，真值只有真或假</p>
+<p>不确定性推理：都不确定，真值会位于真假之间</p>
+<p>​	①似然推理（概率论）</p>
+<p>​	②模糊推理（模糊逻辑）</p>
+</blockquote>
+<p><strong>按是否出现反复情况分类</strong></p>
+<blockquote>
+<p>单调推理：随着新知识加入使结论单调增加的趋势</p>
+<p>非单调推理：新知识加入否定了前面的结论，回退上一步重新推理</p>
+</blockquote>
+<p><strong>按是否运用启发式知识分类</strong></p>
+<blockquote>
+<p>启发式推理：如解决问题的策略、技巧和经验，以加快推理</p>
+<p>非启发式推理：只按照一般控制逻辑进行推理</p>
+</blockquote>
+<h2 id="自然演绎推理"><a href="#自然演绎推理" class="headerlink" title="自然演绎推理"></a>自然演绎推理</h2><ol>
+<li>假言推理</li>
+</ol>
+<p>一般形式：P，P→Q ⇒ Q  如果P和P→Q都为真，则可推出Q为真</p>
+<ol start="2">
+<li>拒取式推理·</li>
+</ol>
+<p>一般形式：P→Q，¬Q ⇒ ¬P  如果谓词公式P→Q为真且Q为假，则可推出P为假</p>
+<ol start="3">
+<li>三段论式推理</li>
+</ol>
+<p>一般形式：P→Q，Q→R ⇒ P→R  如果P→Q，Q→R都为真，则可推出 P→R为真。其中Q称为中项</p>
+<p> <strong>案例</strong></p>
+<blockquote>
+<p>现有已知事实，小李喜欢所有编程课；所有程序设计语言课都是编程课；Python是一本程序设计语言课。求证：小李喜欢Python</p>
+</blockquote>
+<p>（1）P（x）：x是编程课 L（x，y）：x喜欢y C（x）：x是一门程序设计语言课</p>
+<p>（2）P（x）→L（Li，x）、（∀x）[C(x)→P(x)]、C(Python)</p>
+<p>（3）P（Python）、P（x）→L（Li，x）→L（Li，Python）</p>
+<h2 id="归结演绎推理"><a href="#归结演绎推理" class="headerlink" title="归结演绎推理"></a>归结演绎推理</h2><p>⭐<strong>谓词公式转换子句集</strong></p>
+<p>（1）通过谓词公式的等价性消去谓词公式中的“→”和“↔”</p>
+<blockquote>
+<p><strong>P→Q ⇔ ¬P⋁Q（连接词化归律）</strong></p>
+<p><strong>P↔Q ⇔ （¬P⋁Q）⋀（¬Q⋁P）⇔ （P⋀Q）⋁（¬Q⋀¬P）</strong></p>
+</blockquote>
+<p>（2）把否定符号（¬）移到紧靠谓词的位置</p>
+<blockquote>
+<p><strong>¬（P⋀Q）⇔¬P⋁¬Q，¬（P⋁Q）⇔¬P⋀¬Q</strong>（德摩根律）</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251221192653556.png" alt="image-20251221192653556"></p>
+<p>（量词转换率）</p>
+</blockquote>
+<p>（3）变元标准化 把被约束的变元重命名</p>
+<p>（4）化为前束形</p>
+<p>把所有量词移动到公式前面。但移动不能改变量词的相对位置</p>
+<blockquote>
+<p><u>（∀x）</u>Q(x)<u>（∃y）</u>R(y) ⇔ <u>（∀x）（∃y）</u>Q(x)R(y)</p>
+</blockquote>
+<p>（5）消去存在量词</p>
+<p>①如果存在量词前无全称量词，直接用新个体常量（如abc）替换即可</p>
+<p>②若有则用Skolem函数f（x1，x2，…，xn）替换该存在量词约束的变元y</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251221193356337.png" alt="image-20251221193356337"></p>
+<p>上图中y、z都被约束，分别用f（x）、g（x）代替了</p>
+<p>（6）化为Skolem标准形</p>
+<p>标准式（∀x1）…（∀xn）<u>M（x1,x2,…，xn）</u></p>
+<p><u>M（x1,x2,…，xn）</u>由一堆合取的子句构成</p>
+<blockquote>
+<p>P⋁(Q⋀R) ⇔ (P⋁Q)⋀(P⋁R)</p>
+<p>P⋀(Q⋁R) ⇔ (P⋀Q)⋁(P⋀R)</p>
+</blockquote>
+<p>（7）消去全称量词</p>
+<p>到这里之间去掉就行</p>
+<p>（8）消去合取词</p>
+<p>消去后把合取词两边内容提取</p>
+<p>（9）子句变元标准化</p>
+<p>把提取出来的每个合取词统一</p>
+<ol start="4">
+<li><h1 id="不确定性推理方法"><a href="#不确定性推理方法" class="headerlink" title="不确定性推理方法"></a>不确定性推理方法</h1></li>
+</ol>
+<p><strong>知识不确定性表示</strong></p>
+<p>IF E THEN H </p>
+<p>CF(H,E)表示该知识的可信度，取值范围为[-1,1]</p>
+<p>CF(H,E)&gt;0：证据E增加了结论H的真的程度</p>
+<p>CF(H,E)&lt;0：证据E增加了结论H的假的程度</p>
+<p>CF(H,E)&#x3D;1：证据E使结论H为真</p>
+<p>CF(H,E)&#x3D;-1：证据E使结论H为假</p>
+<p>CF(H,E)&#x3D;0：E与H无关</p>
+<p><strong>证据不确定性表示</strong></p>
+<p>CF(E)，取值范围为[-1,1]</p>
+<p>CF(E)&gt;0：证据E以某种程度为真</p>
+<p>CF(E)&lt;0：证据E以某种程度为假</p>
+<p>CF(E)&#x3D;1：证据E为真</p>
+<p>CF(E)&#x3D;-1：证据E为假</p>
+<p>CF(E)&#x3D;0：对E的真假程度位置</p>
+<p><strong>结论可信度</strong></p>
+<p>CF(H)&#x3D;CF(H,E)*MAX[0,CF(E)]</p>
+<p>若出现两条知识推出同一结论⭐</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222162557293.png" alt="image-20251222162557293"></p>
+<p>若有三条知识推导出来的结论，先按上图方法求出CF₁₂(H)再与CF₃(H)进行计算</p>
+<p><strong>信任函数</strong><br>$$</p>
+<p>Bel(A)&#x3D;∑_{B⊆D}M(B)<br>$$<br>Bel是信任函数、M是概率分布函数</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222182834338.png" alt="image-20251222182834338"></p>
+<p>案例</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222182929941.png" alt="image-20251222182929941"></p>
+<p><strong>似然函数</strong></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222183057311.png" alt="image-20251222183057311"></p>
+<p>案例</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222183256644.png" alt="image-20251222183256644"></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222184046432.png" alt="image-20251222184046432"></p>
+<p>概率分配函数的正交和</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222184357487.png" alt="image-20251222184357487"></p>
+<p>案例</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222184832556.png" alt="image-20251222184832556"></p>
+<p><strong>类概率函数</strong></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222185552251.png" alt="image-20251222185552251"></p>
+<p>案例</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222190718468.png" alt="image-20251222190718468"></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222191022005.png" alt="image-20251222191022005"></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222191052525.png" alt="image-20251222191052525"></p>
+<p>不确定性推理步骤</p>
+<p>（1）建立样本空间D，确定概率分配函数</p>
+<p>（2）假设（证据、知识）的不确定性表示：由经验给出或由规则和事实的信度度量计算基本概率数</p>
+<p>（3）组合证据不确定性的算法</p>
+<p>（4）不确定性传递算法：计算所有关心的子集A信任函数值Bel（A）、似然函数值Pl（A）</p>
+<p>（5）最终由Bel（A）、Pl（A）得出结果</p>
+<p>案例</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222192111920.png" alt="image-20251222192111920"></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222192447647.png" alt="image-20251222192447647"></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251222192646551.png" alt="image-20251222192646551"></p>
+<hr>
+<ol start="5">
+<li><h1 id="搜索求解策略"><a href="#搜索求解策略" class="headerlink" title="搜索求解策略"></a>搜索求解策略</h1></li>
+</ol>
+<h2 id="宽度优先搜索"><a href="#宽度优先搜索" class="headerlink" title="宽度优先搜索"></a>宽度优先搜索</h2><p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251223091306685.png" alt="image-20251223091306685"></p>
+<p>案例</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251223091840381.png" alt="image-20251223091840381"></p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251223091910551.png" alt="image-20251223091910551"></p>
+<h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><h2 id="估价函数⭐"><a href="#估价函数⭐" class="headerlink" title="估价函数⭐"></a>估价函数⭐</h2><p>f(n)&#x3D;g(n)+h(n)	g(n)为初始节点S0到中间节点n（当前位置）的实际代价；h(n)为中间节点n（当前位置）到目标节点G的最优路径估计代价</p>
+<h2 id="全局择优搜索"><a href="#全局择优搜索" class="headerlink" title="全局择优搜索"></a>全局择优搜索</h2><p>对<strong>每一个节点</strong>选择<strong>估价函数值最小</strong>的节点作为下一个考察点</p>
+<p>案例</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251223094106767.png" alt="image-20251223094106767"></p>
+<p>h(n)的值为  2*(当前节点到目标节点数)</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251223094629144.png" alt="image-20251223094629144"></p>
+<h2 id="局部择优搜索"><a href="#局部择优搜索" class="headerlink" title="局部择优搜索"></a>局部择优搜索</h2><p>扩展<strong>某一节点</strong>后选择估计函数小的节点作为下一考察点</p>
+<p>案例</p>
+<p><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/image-20251223095454620.png" alt="image-20251223095454620"></p>
+<h2 id="A-搜索"><a href="#A-搜索" class="headerlink" title="A*搜索"></a>A*搜索</h2><p>f(n)&#x3D;g(n)+h(n) 且 h(n)&lt;&#x3D;h*(n)（从N到目标节点的最小路径）</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://megumi-sea.love">Samdn</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/Introduction%20to%20Artificial%20Intelligence/">http://megumi-sea.love/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/Introduction%20to%20Artificial%20Intelligence/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://megumi-sea.love" target="_blank">꒰ঌ(🎀ᗜ` v ´ᗜ 🌸)໒꒱💈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a></div><div class="post-share"><div class="social-share" data-image="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/%E6%97%A5%E8%AE%B0/daily_December/" title="2025-12"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">2025-12</div></div><div class="info-2"><div class="info-item-1">​	2025.12.19 星期五 ⛅  明天就是26考研了。考完之后就轮到我们这一届开始准备了，试着写日记调整一下自己。虽然不知道能坚持多久但还是先试一试 已经是期末周了，前几天刚考完两门，今天在准备接下来要考的人工智能。早上第一次尝试不带手机上床睡觉，成功在闹钟响后几分钟就下床了，可喜可贺（ 日立帮我之前的毛捏好了，做的特别好看啊给我看爽了。我再也不去找那nt毛娘了我服了！ 下午回来一直在画画我靠怎么就1点了，已经是20号了。把今天的日记敲完洗脸上床了明天还有实验……  ​	2025.12.20 余365天 星期六 🌤 困。醒来已经是8：25了。 早上实验内容不多，做完玩了一个半小时电脑 下午改完就开始糊实验报告了……又臭又长一点也不想写，模板还有问题…… 5点拿外卖丢餐了……一直补笔记到7点，好饿…… 今天又什么也没干  ​	2025.12.21 余364天 星期天...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/design_of_java/" title="大鱼吃小鱼——java课程设计小游戏开发"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-20</div><div class="info-item-2">大鱼吃小鱼——java课程设计小游戏开发</div></div><div class="info-2"><div class="info-item-1"> 游戏概述  本游戏是一个基于 Java 的二维游戏，玩家控制一条鱼在海洋环境中生存，通过吃掉敌方小鱼来获得分数并提升等级。游戏包含了多个关卡和敌人类型，具有简单的碰撞检测和游戏状态管理。 (因为手头上找不到合适的游戏素材，所以都是拿现有的东西拼凑的，内容可替换)  开发环境   开发工具：Vscode 编程语言：Java 主要库： javax.swing：用于创建图形用户界面 java.awt：用于绘图和图形处理 java.util：用于数据结构和集合     类基本功能实现  游戏窗口 类：GameWin.java 作用：设置游戏窗口的大小、标题、背景颜色，并初始化游戏状态。 关键方法： launch()：设置窗口属性，添加鼠标和键盘事件监听器，并启动游戏循环。 paint(Graphics...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/huibian/" title="汇编语言指令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-06-29</div><div class="info-item-2">汇编语言指令</div></div><div class="info-2"><div class="info-item-1">数据传输类 mov指令  格式：mov dst,src mov指令是最常用的数据传送指令，传送对象可以是数据或地址  ①dst、src数据类型需要一致（同为16位或8位） ②dst、src不能同时进行存储器寻址 ③dst不能为数据段寄存器（DS） ④dst为段寄存器时（不为DS），src不能为立即数或段寄存器   xchg指令  格式：xchg opr1,opr2 功能：将操作数opr1和opr2的内容互换  ①数据类型需一致 ②只能在通用寄存器&#x2F;通用寄存器→存储单元之间进行交换 ③不能采用立即寻址   lea指令  格式：lea...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learning2/" title="面向对象"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-21</div><div class="info-item-2">面向对象</div></div><div class="info-2"><div class="info-item-1"> 类和对象  ​	类：对象共同特征的描述 ​	对象：真实存在的具体东西 在java中，必须先设计类，才能获取对象。  如何定义类  1234567public class 类名&#123;	1.成员变量（代表属性，一般是名词，如手机的价格、品牌）	2.成员方法（行为，一般为动词，如手机可以玩游戏）	3.构造器（后面学习）	4.代码块（同上）	5.内部类（同上）&#125;     如何得到类的对象  类名 对象名 &#x3D; new 类名(); 1Phone p = new...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java/java_learnng/" title="Java基本语法入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-03</div><div class="info-item-2">Java基本语法入门</div></div><div class="info-2"><div class="info-item-1">​    这是一份个人向的笔记，供个人复习参考用，也适合有一定程序语言基础的初学者入门。希望看完能够对你会有所帮助^ ^（可以配合网课食用）  第一个程序：  123456789//class是一个类，helloworld是类名，类名尽量跟文件名保持一致public class helloworld&#123;	    //main:主方法（程序的入口）    public static void main(String[] args) &#123;        //输出双引号中的语句        System.out.println(&quot;Hello, World!&quot;);	    &#125;&#125;     tips：编写Java时应该注意以下内容  大小写敏感：如标识符Hello和hello是不一样的  类名：对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 MyFirstJavaClass  主方法入口：所有的 Java 程序由 public static void main(String[]...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c/lanqiao_learning/" title="蓝桥杯备赛用（2025）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-12</div><div class="info-item-2">蓝桥杯备赛用（2025）</div></div><div class="info-2"><div class="info-item-1">  输入带空格的字符串应该用fgets，scanf遇到空格时会停止读取，后续内容被截断 fgets用法如下：   1fgets(input, sizeof(input), stdin);   快速排序  ​	需要自己先定义一个函数compare（函数名可不为compare） 12345int compare(const void *a, const void *b) &#123;	int num1 = *(int*)a; 	int num2 = *(int*)b; 	return num2 - num1; // 返回正数时，num1 排在 num2 后面（实现降序）&#125;  ​	使用时如下： 1qsort( arr , n , sizeof ( int ) , compare );	//arr是数组名，n为数组的长度， compare为上面需要自己定义的函数  ​	二编：好麻烦不想用qsort了，otto教了一个c++的sort写法： 123456789101112131415161718192021222324252627#include...</div></div></div></a><a class="pagination-related" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/lisan/" title="离散数学速成"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-30</div><div class="info-item-2">离散数学速成</div></div><div class="info-2"><div class="info-item-1"> 命题逻辑的基本概念  命题 命题：能判断真值的陈述句 真值：真和假（可以用1和0表示） 真命题：真值为真的命题 假命题：真值为假的命题 原子命题：不能再被分解的每题 复合命题：由原子命题通过联结词联结而成的命题  如何判断： ①是否为陈述句 ②是否有唯一真值 命题联结词有五种联结词，分别为否定、合取、析取、蕴涵、等价。  否定：否定的真值与原真值结果相反（相当于数字逻辑中的 “非”） 合取：只有当两个真值都为真时，合取才为真（相当于数字逻辑中的 “与”） 析取：只要有一个真值为真，析取的值就为真（相当于数字逻辑中的 “或”） 蕴涵（需要单独记忆）：当p为真且q为假时，p→q为假(1→0 0)，其他情况都为真。p q的顺序不能颠倒   只要p，就q   因为p，所以q   p仅当q              只有q才p   除非q才p  ...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/117138393_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Samdn</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个一晚上速成的小站，比较简陋大家凑合看看就行qaq</div></div><div class="card-widget user-map" id="user-map"><div class="item-headline"><i class="fas fa-heartbeat"></i><span>访客地图</span></div><div class="item-content"><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8"></script></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">绪论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.</span> <span class="toc-text">知识表示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">一阶谓词逻辑表示法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91"><span class="toc-number">2.1.1.</span> <span class="toc-text">命题逻辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91"><span class="toc-number">2.1.2.</span> <span class="toc-text">谓词逻辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%93%E8%AF%8D%E5%85%AC%E5%BC%8F"><span class="toc-number">2.1.3.</span> <span class="toc-text">谓词公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">状态空间表示法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F%E5%BC%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="toc-number">2.3.</span> <span class="toc-text">产生式的基本形式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BA%8B%E5%AE%9E%E7%9F%A5%E8%AF%86%E7%9A%84%E4%BA%A7%E7%94%9F%E5%BC%8F%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.3.1.</span> <span class="toc-text">确定性事实知识的产生式表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BA%8B%E5%AE%9E%E7%9F%A5%E8%AF%86%E7%9A%84%E4%BA%A7%E7%94%9F%E5%BC%8F%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.3.2.</span> <span class="toc-text">不确定性事实知识的产生式表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E6%80%A7%E8%A7%84%E5%88%99%E7%9F%A5%E8%AF%86%E7%9A%84%E4%BA%A7%E7%94%9F%E5%BC%8F%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.3.3.</span> <span class="toc-text">确定性规则知识的产生式表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E8%A7%84%E5%88%99%E7%9F%A5%E8%AF%86%E7%9A%84%E4%BA%A7%E7%94%9F%E5%BC%8F%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.3.4.</span> <span class="toc-text">不确定性规则知识的产生式表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F%E5%BC%8F%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.3.5.</span> <span class="toc-text">产生式系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84"><span class="toc-number">2.4.</span> <span class="toc-text">语义网络结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E4%B9%89%E5%85%B3%E7%B3%BB"><span class="toc-number">2.4.1.</span> <span class="toc-text">基本语义关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">2.5.</span> <span class="toc-text">框架表示法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">确定性推理方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E7%90%86%E6%A6%82%E8%BF%B0"><span class="toc-number">3.1.</span> <span class="toc-text">推理概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">3.2.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E6%BC%94%E7%BB%8E%E6%8E%A8%E7%90%86"><span class="toc-number">3.3.</span> <span class="toc-text">自然演绎推理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%92%E7%BB%93%E6%BC%94%E7%BB%8E%E6%8E%A8%E7%90%86"><span class="toc-number">3.4.</span> <span class="toc-text">归结演绎推理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">不确定性推理方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E6%B1%82%E8%A7%A3%E7%AD%96%E7%95%A5"><span class="toc-number">5.</span> <span class="toc-text">搜索求解策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2"><span class="toc-number">5.1.</span> <span class="toc-text">宽度优先搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2"><span class="toc-number">5.2.</span> <span class="toc-text">深度优先搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%B0%E4%BB%B7%E5%87%BD%E6%95%B0%E2%AD%90"><span class="toc-number">5.3.</span> <span class="toc-text">估价函数⭐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E6%8B%A9%E4%BC%98%E6%90%9C%E7%B4%A2"><span class="toc-number">5.4.</span> <span class="toc-text">全局择优搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E6%8B%A9%E4%BC%98%E6%90%9C%E7%B4%A2"><span class="toc-number">5.5.</span> <span class="toc-text">局部择优搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-%E6%90%9C%E7%B4%A2"><span class="toc-number">5.6.</span> <span class="toc-text">A*搜索</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/Introduction%20to%20Artificial%20Intelligence/" title="人工智能导论期末">人工智能导论期末</a><time datetime="2025-12-23T08:25:03.650Z" title="发表于 2025-12-23 16:25:03">2025-12-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E6%97%A5%E8%AE%B0/daily_December/" title="2025-12">2025-12</a><time datetime="2025-12-19T07:08:19.210Z" title="发表于 2025-12-19 15:08:19">2025-12-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/softwork_project_manage/" title="软件项目管理复习">软件项目管理复习</a><time datetime="2025-12-15T04:54:13.276Z" title="发表于 2025-12-15 12:54:13">2025-12-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%8D%E4%B9%A0/software_engineering/" title="软件工程期末">软件工程期末</a><time datetime="2025-11-30T09:44:17.717Z" title="发表于 2025-11-30 17:44:17">2025-11-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/other/Firlight/" title="基础测试题最终版">基础测试题最终版</a><time datetime="2025-09-23T16:26:49.692Z" title="发表于 2025-09-24 00:26:49">2025-09-24</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://skymirror-1347671768.cos.ap-beijing.myqcloud.com/20250309235030.png);"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Samdn</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: '0WhQ8k0Y4jiLLX5VxgVQj7p8-MdYXbMMI',
+      appKey: 'pZDjylYhUc1rb5B1DxF1yrhm',
+      avatar: 'monsterid',
+      serverURLs: 'https://samdn.megumi-sea.love',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script defer src="/live2d-widget/dist/autoload.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
